@@ -1,0 +1,139 @@
+# Administrace A Studia — Sveltia CMS (kompatibilní s Decap CMS)
+# Úpravy se ukládají do GitHubu, web se automaticky přegeneruje (GitHub Actions).
+backend:
+  name: github
+  repo: webhunter-navrhy/astudio
+  branch: main
+media_folder: assets/img
+public_folder: /assets/img
+locale: cs
+site_url: https://webhunter-navrhy.github.io/astudio/
+logo_url: https://webhunter-navrhy.github.io/astudio/assets/favicon.svg
+
+collections:
+  - name: nastaveni
+    label: Nastavení a kontakty
+    files:
+      - name: site
+        label: Kontakty a rezervace
+        file: content/site.json
+        fields:
+          - { name: name, label: Název studia, widget: string }
+          - { name: tagline, label: Podtitul, widget: string }
+          - { name: city, label: Město, widget: string }
+          - { name: address, label: Adresa, widget: string }
+          - { name: address_note, label: Poznámka k adrese, widget: text, required: false }
+          - { name: parking, label: Parkování, widget: text }
+          - { name: phone, label: Telefon, widget: string }
+          - { name: email, label: E-mail, widget: string }
+          - { name: instagram, label: Instagram (bez @), widget: string }
+          - { name: booking_url, label: Odkaz na rezervační systém, widget: string }
+          - { name: booking_embed, label: "Odkaz pro vložení rezervací (iframe)", widget: string, required: false, hint: "Když vyplníte, rozvrh z rezervačního systému se zobrazí přímo na stránce Rozvrh." }
+          - { name: booking_system, label: Název rezervačního systému, widget: string, required: false }
+
+  - name: obsah
+    label: Obsah webu
+    files:
+      - name: lessons
+        label: Lekce
+        file: content/lessons.json
+        fields:
+          - name: lessons
+            label: Lekce
+            widget: list
+            summary: "{{fields.group}} — {{fields.name}}"
+            fields:
+              - { name: id, label: "ID (bez mezer, např. barre-basic)", widget: string }
+              - { name: group, label: Skupina, widget: select, options: [Barre, Pilates, Soukromě] }
+              - { name: name, label: Název, widget: string }
+              - { name: length, label: Délka, widget: string }
+              - { name: level, label: "Náročnost (0–3)", widget: number, value_type: int, min: 0, max: 3 }
+              - { name: for, label: Pro koho, widget: string }
+              - { name: text, label: Popis, widget: text }
+              - { name: image, label: Fotka, widget: image }
+
+      - name: schedule
+        label: Rozvrh (ukázka na webu)
+        file: content/schedule.json
+        fields:
+          - { name: note, label: Poznámka pod rozvrhem, widget: text }
+          - name: days
+            label: Dny
+            widget: list
+            summary: "{{fields.day}}"
+            fields:
+              - { name: day, label: Den, widget: string }
+              - { name: short, label: Zkratka, widget: string }
+              - name: classes
+                label: Lekce
+                widget: list
+                summary: "{{fields.time}} {{fields.lesson}}"
+                fields:
+                  - { name: time, label: Čas, widget: string }
+                  - { name: lesson, label: Lekce, widget: string }
+                  - { name: len, label: Délka, widget: string }
+
+      - name: pricing
+        label: Ceník
+        file: content/pricing.json
+        fields:
+          - { name: note, label: Poznámka k ceníku, widget: text }
+          - name: single
+            label: Jednotlivé vstupy
+            widget: list
+            fields:
+              - { name: name, label: Název, widget: string }
+              - { name: price, label: Cena, widget: string }
+              - { name: note, label: Poznámka, widget: string, required: false }
+          - name: passes
+            label: Permanentky
+            widget: list
+            fields:
+              - { name: name, label: Název, widget: string }
+              - { name: price, label: Cena, widget: string }
+              - { name: per, label: Cena za lekci / popis, widget: string }
+              - { name: valid, label: Platnost, widget: string }
+              - { name: featured, label: Zvýraznit, widget: boolean, default: false }
+          - { name: multisport, label: MultiSport, widget: text }
+          - { name: gift, label: Dárkový poukaz, widget: text }
+
+      - name: team
+        label: O mně a lektorky
+        file: content/team.json
+        fields:
+          - name: founder
+            label: Zakladatelka
+            widget: object
+            fields:
+              - { name: name, label: Jméno, widget: string }
+              - { name: role, label: Role, widget: string }
+              - { name: image, label: Fotka, widget: image }
+              - { name: story, label: Příběh (odstavce), widget: list, field: { name: p, label: Odstavec, widget: text } }
+              - { name: quals, label: Kvalifikace, widget: list, field: { name: q, label: Položka, widget: string } }
+          - name: team
+            label: Lektorky
+            widget: list
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { name: name, label: Jméno, widget: string }
+              - { name: role, label: Co učí, widget: string }
+              - { name: image, label: Fotka, widget: image }
+              - { name: text, label: Představení, widget: text }
+
+      - name: faq
+        label: Časté dotazy
+        file: content/faq.json
+        fields:
+          - name: groups
+            label: Skupiny otázek
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Název skupiny, widget: string }
+              - name: items
+                label: Otázky
+                widget: list
+                summary: "{{fields.q}}"
+                fields:
+                  - { name: q, label: Otázka, widget: string }
+                  - { name: a, label: Odpověď, widget: text }
