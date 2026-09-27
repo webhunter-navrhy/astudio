@@ -1,0 +1,57 @@
+{% macro page_hero(kicker, title, lead='', img='') %}
+<section class="phero{% if img %} phero--img{% endif %}">
+  <div class="leaves" aria-hidden="true"></div>
+  <div class="wrap phero-in">
+    <div>
+      <p class="kicker">{{ kicker }}</p>
+      <h1 class="phero-title">{{ title|safe }}</h1>
+      {% if lead %}<p class="phero-lead">{{ lead|safe }}</p>{% endif %}
+    </div>
+    {% if img %}<figure class="arch phero-img"><img src="{{ root }}assets/img/{{ img }}" alt=""></figure>{% endif %}
+  </div>
+</section>
+{% endmacro %}
+
+{% macro level(n) %}{% if n %}<span class="lvl" aria-label="Náročnost {{ n }} ze 3">{% for i in range(3) %}<i{% if i < n %} class="on"{% endif %}></i>{% endfor %}</span>{% endif %}{% endmacro %}
+
+{% macro schedule_table(schedule, compact=false) %}
+<div class="sched{% if compact %} sched--compact{% endif %}" data-sched>
+  <div class="sched-tabs" role="tablist" aria-label="Den v týdnu">
+    {% for d in schedule.days %}<button role="tab" class="sched-tab" data-day="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}"><span>{{ d.short }}</span><small>{{ d.classes|length }}</small></button>{% endfor %}
+  </div>
+  <div class="sched-days">
+    {% for d in schedule.days %}
+    <div class="sched-day{% if loop.first %} is-on{% endif %}" data-day="{{ loop.index0 }}" role="tabpanel">
+      <h3 class="sched-dayname">{{ d.day }}</h3>
+      <ul>
+        {% for c in d.classes %}
+        <li class="sched-row">
+          <time>{{ c.time }}</time>
+          <div><b>{{ c.lesson }}</b><span>{{ c.len }}</span></div>
+          <a class="btn btn-xs" href="{{ site.booking_url }}" target="_blank" rel="noopener">Rezervovat</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro faq_list(items) %}
+<div class="faq">
+  {% for f in items %}<details><summary>{{ f.q }}<svg><use href="#i-plus"/></svg></summary><div class="faq-a">{{ f.a }}</div></details>{% endfor %}
+</div>
+{% endmacro %}
+
+{% macro cta_band(title, text, btn='Rezervovat lekci', href='rozvrh/') %}
+<section class="cta">
+  <div class="leaves leaves--dark" aria-hidden="true"></div>
+  <div class="wrap cta-in">
+    <svg class="cta-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+    <h2 class="h2">{{ title|safe }}</h2>
+    <p>{{ text }}</p>
+    <a href="{{ root }}{{ href }}" class="btn btn--dark">{{ btn }} <svg><use href="#i-arr"/></svg></a>
+  </div>
+</section>
+{% endmacro %}

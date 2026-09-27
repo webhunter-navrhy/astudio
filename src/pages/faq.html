@@ -1,0 +1,17 @@
+{# {"out": "faq/index.html", "id": "faq", "title": "Časté dotazy — A Studio Odolena Voda", "desc": "Odpovědi na nejčastější otázky o lekcích, rezervacích, platbách a studiu."} #}
+{% extends "base.html" %}
+{% from "macros.html" import page_hero, faq_list, cta_band with context %}
+{% block content %}
+{{ page_hero('FAQ', 'Časté<br><em>dotazy</em>', 'Nenašla jste odpověď? Napište nám, rády poradíme.') }}
+<section class="sec">
+  <div class="wrap">
+    {% for g in faq.groups %}
+    <div class="faq-group reveal">
+      <h2 class="faq-title">{{ g.title }}</h2>
+      {{ faq_list(g['items']) }}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{{ cta_band('Pořád<br><em>váháte?</em>', 'Napište nám na Instagram nebo e-mail. Odpovíme co nejdřív.', 'Kontakt', 'kontakt/') }}
+{% endblock %}

@@ -1,0 +1,29 @@
+{# {"out": "lektorky/index.html", "id": "lektorky", "title": "Lektorky — A Studio Odolena Voda", "desc": "Představení lektorek Barre a Pilates v A Studiu."} #}
+{% extends "base.html" %}
+{% from "macros.html" import page_hero, cta_band with context %}
+{% block content %}
+{{ page_hero('Lektorky', 'Ženy, které<br><em>vás povedou</em>', 'Certifikované lektorky, které si vás zapamatují jménem a poradí vám s technikou i motivací.') }}
+<section class="sec">
+  <div class="wrap">
+    <div class="team reveal-group">
+      <article class="member member--founder">
+        <figure class="arch"><img src="{{ root }}assets/img/{{ team.founder.image|img }}" alt="" loading="lazy"></figure>
+        <p class="member-role">{{ team.founder.role }}</p>
+        <h2>{{ team.founder.name }}</h2>
+        <p>{{ team.founder.story[0] }}</p>
+        <a href="{{ root }}o-nas/#o-mne" class="link">Celý příběh <svg><use href="#i-arr"/></svg></a>
+      </article>
+      {% for m in team.team %}
+      <article class="member">
+        <figure class="arch"><img src="{{ root }}assets/img/{{ m.image|img }}" alt="" loading="lazy"></figure>
+        <p class="member-role">{{ m.role }}</p>
+        <h2>{{ m.name }}</h2>
+        <p>{{ m.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="note reveal">Fotografie jsou ilustrační — po otevření studia je nahradíme profesionálními portréty lektorek.</p>
+  </div>
+</section>
+{{ cta_band('Chcete učit<br><em>v A Studiu?</em>', 'Hledáme lektorky barre a pilates, které sdílí naše hodnoty. Napište nám.', 'Kontaktujte nás', 'kontakt/') }}
+{% endblock %}

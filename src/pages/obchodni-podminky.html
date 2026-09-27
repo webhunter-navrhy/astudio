@@ -1,0 +1,15 @@
+{# {"out": "obchodni-podminky/index.html", "id": "vop", "title": "Obchodní podmínky — A Studio", "desc": "Obchodní podmínky a provozní řád A Studia."} #}
+{% extends "base.html" %}
+{% from "macros.html" import page_hero with context %}
+{% block content %}
+{{ page_hero('Právní informace', 'Obchodní<br><em>podmínky</em>', 'Vzor k doplnění — finální znění doporučujeme nechat zkontrolovat.') }}
+<section class="sec"><div class="wrap legal">
+  <h2>1. Provozovatel</h2><p>Provozovatelem studia A Studio je [jméno / obchodní firma], IČO [doplnit], se sídlem [doplnit] (dále jen „provozovatel“).</p>
+  <h2>2. Rezervace lekcí</h2><p>Na skupinové lekce je nutná rezervace přes online rezervační systém. Rezervace je platná po jejím potvrzení systémem. Kapacita lekcí je omezená.</p>
+  <h2>3. Zrušení rezervace</h2><p>Rezervaci lze bezplatně zrušit nejpozději 12 hodin před začátkem lekce. Při pozdějším zrušení nebo neúčasti propadá vstup, resp. se odečte z permanentky.</p>
+  <h2>4. Permanentky a platby</h2><p>Permanentky jsou nepřenosné a platí po dobu uvedenou v ceníku. Po uplynutí platnosti nevyčerpané vstupy propadají. Platit lze [kartou / převodem / v hotovosti — doplnit].</p>
+  <h2>5. Zdravotní stav</h2><p>Klientka cvičí na vlastní odpovědnost a je povinna informovat lektorku o zdravotních omezeních, zraněních nebo těhotenství.</p>
+  <h2>6. Provozní řád</h2><p>Do sálu se vstupuje v protiskluzových ponožkách nebo naboso. Na lekci prosíme přicházet včas; po začátku lekce nemusí být vstup z bezpečnostních důvodů umožněn.</p>
+  <h2>7. Závěrečná ustanovení</h2><p>Tyto podmínky jsou platné od [datum]. Provozovatel si vyhrazuje právo je změnit; aktuální znění je vždy zveřejněno na tomto webu.</p>
+</div></section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{# {"out": "o-nas/index.html", "id": "onas", "title": "O A Studiu — příběh studia a zakladatelky", "desc": "Příběh A Studia v Odolené Vodě, představení zakladatelky, její zkušenosti a kvalifikace."} #}
+{% extends "base.html" %}
+{% from "macros.html" import page_hero, cta_band with context %}
+{% block content %}
+{{ page_hero('O A Studiu', 'Místo, kde<br><em>patříte</em>', 'Boutique studio pro ženy, které chtějí být silnější — v těle i v hlavě.', 'interier-oblouk.jpg') }}
+
+<section class="sec">
+  <div class="wrap story">
+    <div class="story-copy">
+      <p class="kicker reveal">Příběh studia</p>
+      <h2 class="h2 reveal">Pohyb je<br><em>péče o sebe</em></h2>
+      {% for p in team.founder.story %}<p class="reveal">{{ p }}</p>{% endfor %}
+    </div>
+    <div class="story-values reveal-group">
+      <div><h3>Tělo</h3><p>Silné, pohyblivé a zdravé — bez honby za dokonalostí.</p></div>
+      <div><h3>Mysl</h3><p>Hodina jen pro vás. Dech, soustředění, klid.</p></div>
+      <div><h3>Rovnováha</h3><p>Disciplína, která přináší svobodu.</p></div>
+      <div><h3>Komunita</h3><p>Ženy, které se navzájem podporují.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--beige" id="o-mne">
+  <div class="wrap founder">
+    <figure class="arch founder-img reveal"><img src="{{ root }}assets/img/{{ team.founder.image|img }}" alt="Zakladatelka A Studia" loading="lazy"><figcaption>Ilustrační foto — nahradíme vaším portrétem</figcaption></figure>
+    <div>
+      <p class="kicker reveal">O mně</p>
+      <h2 class="h2 reveal">{{ team.founder.name }}</h2>
+      <p class="founder-role reveal">{{ team.founder.role }}</p>
+      <p class="reveal">Tady bude vaše osobní představení — jak jste se dostala k barre a pilates, co vás na pohybu baví a proč jste se rozhodla otevřít studio právě v Odolené Vodě.</p>
+      <p class="kicker reveal" style="margin-top:2rem">Zkušenosti a kvalifikace</p>
+      <ul class="quals reveal-group">{% for q in team.founder.quals %}<li>{{ q }}</li>{% endfor %}</ul>
+      <a href="{{ root }}lektorky/" class="link reveal">Poznejte lektorky <svg><use href="#i-arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="storefront">
+  <figure class="reveal"><img src="{{ root }}assets/img/vyloha.jpg" alt="Vizualizace výlohy A Studia se žlutým polepem" loading="lazy"></figure>
+  <div class="wrap storefront-copy reveal"><p class="kicker">Brzy otevíráme</p><p>Studio je ve výstavbě. Sledujte <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a> — ukážeme vám, jak vzniká.</p></div>
+</section>
+{{ cta_band('Přijďte<br><em>se podívat</em>', 'První lekce je zvýhodněná. Těšíme se na vás.') }}
+{% endblock %}

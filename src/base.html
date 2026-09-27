@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}{{ page_title }}{% endblock %}</title>
+<meta name="description" content="{{ page_desc }}">
+<meta name="theme-color" content="#F6F0E6">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:image" content="{{ root }}assets/img/og.jpg">
+<link rel="icon" href="{{ root }}assets/favicon.svg?v={{ v.fav }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ root }}assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400..500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}assets/style.css?v={{ v.css }}">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ExerciseGym","name":"A Studio","description":"Boutique studio Barre a Pilates v Odolené Vodě.","address":{"@type":"PostalAddress","addressLocality":"Odolena Voda","addressCountry":"CZ"},"email":"{{ site.email }}","telephone":"{{ site.phone|replace(' ','') }}","sameAs":["https://www.instagram.com/{{ site.instagram }}/"]}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="page-{{ page_id }}">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arr" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-12a7 7 0 0 0-14 0c0 5.6 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="logo-a-studio" viewBox="{{ logo.a_studio.vb }}">{{ logo.a_studio.body }}</symbol>
+  <symbol id="logo-full" viewBox="{{ logo.full.vb }}">{{ logo.full.body }}</symbol>
+  <symbol id="logo-mark" viewBox="{{ logo.mark.vb }}">{{ logo.mark.body }}</symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="{{ root }}" class="nav-logo" aria-label="A Studio — úvod"><svg><use href="#logo-a-studio"/></svg></a>
+    <nav class="nav-menu" id="menu" aria-label="Hlavní navigace">
+      {% for id, href, label in nav %}<a href="{{ root }}{{ href }}"{% if id == page_id %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}
+      <a href="{{ root }}rozvrh/" class="btn btn-sm nav-cta">Rezervovat lekci</a>
+      <div class="menu-foot">
+        <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@{{ site.instagram }}</a>
+        <p>{{ site.city }}</p>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <svg class="footer-logo"><use href="#logo-full"/></svg>
+      <p class="footer-claim">Místo, kde se pohyb stává součástí vašeho života.</p>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>{% for id, href, label in nav %}<li><a href="{{ root }}{{ href }}">{{ label }}</a></li>{% endfor %}<li><a href="{{ root }}faq/">FAQ</a></li></ul>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <ul>
+        <li>{{ site.city }}</li>
+        <li><a href="tel:{{ site.phone|replace(' ','') }}">{{ site.phone }}</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Informace</h4>
+      <ul><li><a href="{{ root }}prvni-navsteva/">První návštěva</a></li><li><a href="{{ root }}obchodni-podminky/">Obchodní podmínky</a></li><li><a href="{{ root }}ochrana-osobnich-udaju/">Ochrana osobních údajů</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 A Studio Odolena Voda</span><span>Strong · Balanced · Happier you</span></div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a href="{{ root }}rozvrh/" class="mbar-book"><svg><use href="#i-cal"/></svg>Rezervovat lekci</a>
+  <a href="https://www.instagram.com/{{ site.instagram }}/" class="mbar-ig" target="_blank" rel="noopener" aria-label="Instagram A Studia"><svg><use href="#i-ig"/></svg></a>
+</div>
+
+<script src="{{ root }}assets/main.js?v={{ v.js }}" defer></script>
+</body>
+</html>

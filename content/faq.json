@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {"title": "Lekce", "items": [
+      {"q": "Nikdy jsem necvičila barre ani pilates. Zvládnu to?", "a": "Určitě. Začněte lekcí Barre Basic nebo Pilates Mat — jsou pro začátečnice a lektorka vám ukáže správné provedení i jednodušší varianty cviků."},
+      {"q": "Jaký je rozdíl mezi barre a pilates?", "a": "Barre vychází z baletu — cvičí se u tyče drobnými, přesnými pohyby, které tvarují nohy, hýždě a paže. Pilates se soustředí na střed těla, páteř a dech. Skvěle se doplňují."},
+      {"q": "Kolik žen je na lekci?", "a": "Skupiny jsou malé, aby se vám lektorka mohla věnovat. Přesnou kapacitu uvidíte u každé lekce v rezervačním systému."},
+      {"q": "Můžu cvičit v těhotenství nebo po porodu?", "a": "Po porodu ano, po konzultaci s lékařem. V těhotenství doporučujeme soukromou lekci nebo předem napsat — domluvíme se, co je pro vás vhodné."}
+    ]},
+    {"title": "Rezervace a platby", "items": [
+      {"q": "Jak se na lekci přihlásím?", "a": "Přes tlačítko „Rezervovat lekci“ — vyberete si termín v rozvrhu a zarezervujete místo. Zabere to minutu i z telefonu."},
+      {"q": "Do kdy můžu lekci zrušit?", "a": "Lekci můžete zdarma zrušit nejpozději 12 hodin před začátkem. Při pozdějším zrušení se vstup odečítá."},
+      {"q": "Přijímáte MultiSport?", "a": "Ano, s kartou MultiSport můžete přijít na skupinové lekce. Podmínky upřesníme v ceníku."},
+      {"q": "Můžu koupit dárkový poukaz?", "a": "Ano — na libovolnou částku nebo na permanentku. Napište nám a připravíme ho."}
+    ]},
+    {"title": "Ve studiu", "items": [
+      {"q": "Co si vzít s sebou?", "a": "Pohodlné oblečení, protiskluzové ponožky a lahev s vodou. Podložky i všechny pomůcky máme ve studiu."},
+      {"q": "Je ve studiu šatna a sprcha?", "a": "Ano, k dispozici je šatna s uzamykatelnými skříňkami. Informace o sprše doplníme po dokončení studia."},
+      {"q": "Kde zaparkuji?", "a": "Informace o parkování najdete na stránce Kontakt."}
+    ]}
+  ]
+}

@@ -1,0 +1,41 @@
+{# {"out": "cenik/index.html", "id": "cenik", "title": "Ceník — A Studio Odolena Voda", "desc": "Jednorázové vstupy, permanentky, soukromé lekce, MultiSport a dárkové poukazy."} #}
+{% extends "base.html" %}
+{% from "macros.html" import page_hero, cta_band with context %}
+{% block content %}
+{{ page_hero('Ceník', 'Vyberte si,<br><em>jak budete chodit</em>', 'Jednorázově, s permanentkou, nebo bez limitu. Permanentky platí na barre i pilates.') }}
+
+<section class="sec">
+  <div class="wrap">
+    <p class="kicker reveal">Permanentky</p>
+    <div class="passes reveal-group">
+      {% for p in pricing.passes %}
+      <div class="pass{% if p.featured %} pass--feat{% endif %}">
+        {% if p.featured %}<div class="leaves"></div><span class="pass-badge">Nejoblíbenější</span>{% endif %}
+        <h2>{{ p.name }}</h2>
+        <p class="pass-price">{{ p.price }}</p>
+        <p class="pass-per">{{ p.per }}</p>
+        <p class="pass-valid">{{ p.valid }}</p>
+        <a href="{{ site.booking_url }}" class="btn{% if not p.featured %} btn--ghost{% else %} btn--dark{% endif %}" target="_blank" rel="noopener">Koupit</a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="price-grid">
+      <div class="reveal">
+        <p class="kicker">Jednotlivé vstupy</p>
+        <dl class="plist">
+          {% for s in pricing.single %}<div><dt>{{ s.name }}<small>{{ s.note }}</small></dt><dd>{{ s.price }}</dd></div>{% endfor %}
+        </dl>
+      </div>
+      <div class="reveal">
+        <p class="kicker">MultiSport</p>
+        <div class="info-card"><p class="info-big">MultiSport</p><p>{{ pricing.multisport }}</p></div>
+        <p class="kicker" style="margin-top:2.2rem">Dárkový poukaz</p>
+        <div class="info-card info-card--yellow"><div class="leaves"></div><p class="info-big">Darujte pohyb</p><p>{{ pricing.gift }}</p></div>
+      </div>
+    </div>
+    <p class="note reveal">{{ pricing.note }} Lekci lze zdarma zrušit nejpozději 12 hodin předem. Podrobnosti v <a href="{{ root }}obchodni-podminky/">obchodních podmínkách</a>.</p>
+  </div>
+</section>
+{{ cta_band('První lekce<br><em>za ' ~ pricing.single[0].price ~ '</em>', 'Přijďte si A Studio vyzkoušet. Stačí pohodlné oblečení a protiskluzové ponožky.') }}
+{% endblock %}

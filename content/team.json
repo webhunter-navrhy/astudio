@@ -1,0 +1,18 @@
+{
+  "founder": {
+    "name": "Zakladatelka A Studia",
+    "role": "Majitelka & lektorka Barre a Pilates",
+    "image": "lektorka-sed.jpg",
+    "story": [
+      "A Studio vzniklo z touhy vytvořit v Odolené Vodě místo, kam se ženy budou těšit. Ne fitko, kde se počítají opakování, ale prostor, kde se pohyb stává péčí o sebe.",
+      "Barre a pilates mi změnily vztah k vlastnímu tělu — naučily mě sílu bez tlaku a disciplínu, která přináší svobodu. To chci předávat dál.",
+      "V A Studiu se potkáte s malými skupinami, osobním přístupem a lektorkami, které si vás pamatují jménem."
+    ],
+    "quals": ["Certifikovaná lektorka Barre", "Certifikace Pilates Mat", "Kurz zdravotní tělesné výchovy", "Průběžné vzdělávání v oblasti prenatálního a postnatálního cvičení"]
+  },
+  "team": [
+    {"name": "Jméno lektorky", "role": "Barre", "image": "barre-lekce.jpg", "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."},
+    {"name": "Jméno lektorky", "role": "Pilates", "image": "lektorka-meditace.jpg", "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."},
+    {"name": "Jméno lektorky", "role": "Barre & Stretch", "image": "lektorka-zada.jpg", "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "lessons": [
+    {"id": "barre-basic", "group": "Barre", "name": "Barre Basic", "length": "50 min", "level": 1,
+     "for": "Pro začátečnice i návrat po pauze",
+     "text": "Základy barre techniky u tyče i na podložce. Naučíte se správné postavení těla, práci středu a drobné izometrické pohyby, které posilují do hloubky.",
+     "image": "barre-spicky.jpg"},
+    {"id": "barre-sculpt", "group": "Barre", "name": "Barre Sculpt", "length": "50 min", "level": 2,
+     "for": "Pro pokročilejší",
+     "text": "Dynamičtější lekce s lehkými činkami, gumou a míčkem. Tvaruje nohy, hýždě a paže a zlepšuje držení těla — elegance baletu, síla fitness.",
+     "image": "barre-lekce.jpg"},
+    {"id": "barre-burn", "group": "Barre", "name": "Barre Burn", "length": "45 min", "level": 3,
+     "for": "Když chcete vydat energii",
+     "text": "Intenzivní barre v rychlejším tempu s cardio vstupy. Hudba, pot a úsměv na konci lekce.",
+     "image": "barre-nohy.jpg"},
+    {"id": "pilates-mat", "group": "Pilates", "name": "Pilates Mat", "length": "55 min", "level": 1,
+     "for": "Pro všechny úrovně",
+     "text": "Klasický pilates na podložce. Silný střed těla, zdravá záda, lepší dech a kontrola nad každým pohybem.",
+     "image": "pilates-mat.jpg"},
+    {"id": "pilates-props", "group": "Pilates", "name": "Pilates s pomůckami", "length": "55 min", "level": 2,
+     "for": "Pro mírně pokročilé",
+     "text": "Pilates s overballem, kruhem a gumou. Pomůcky přidají odpor i podporu a posunou vás o kus dál.",
+     "image": "pilates-mic.jpg"},
+    {"id": "pilates-flow", "group": "Pilates", "name": "Pilates Flow & Stretch", "length": "55 min", "level": 1,
+     "for": "Na zklidnění a regeneraci",
+     "text": "Plynulá lekce, ve které se pilates prolíná s protažením. Ideální na konec dne nebo jako doplněk k barre.",
+     "image": "protazeni-okno.jpg"},
+    {"id": "privat", "group": "Soukromě", "name": "Soukromá lekce", "length": "55 min", "level": 0,
+     "for": "Jen vy a lektorka",
+     "text": "Individuální lekce barre nebo pilates podle vašeho cíle — návrat po porodu, bolavá záda nebo příprava na skupinové lekce. I pro dvojici.",
+     "image": "pilates-klek.jpg"}
+  ]
+}

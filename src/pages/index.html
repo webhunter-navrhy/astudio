@@ -1,0 +1,126 @@
+{# {"out": "index.html", "id": "home", "title": "A Studio — Barre & Pilates · Odolena Voda", "desc": "Boutique pohybové studio v Odolené Vodě. Barre a Pilates v malých skupinách. Rezervujte si lekci online."} #}
+{% extends "base.html" %}
+{% from "macros.html" import schedule_table, level, cta_band with context %}
+{% block content %}
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker hero-in">Barre — Pilates — Komunita</p>
+      <h1 class="hero-title"><span class="ln"><span>Síla</span></span><span class="ln"><span><em>v rovnováze</em></span></span></h1>
+      <p class="hero-sub hero-in">Nové boutique studio v Odolené Vodě. Místo, kde se pohyb stává součástí vašeho života.</p>
+      <div class="hero-actions hero-in">
+        <a href="rozvrh/" class="btn">Rezervovat lekci <svg><use href="#i-arr"/></svg></a>
+        <a href="prvni-navsteva/" class="link">Jsem tu poprvé</a>
+      </div>
+      <p class="hero-motto hero-in">Strong<br>Balanced<br>Happier you</p>
+    </div>
+    <figure class="hero-media">
+      <div class="arch arch--glow"><img src="assets/img/interier-oblouk.jpg" alt="Vizualizace interiéru A Studia — podsvícený oblouk s logem" fetchpriority="high"></div>
+      <figcaption>Vizualizace studia · otevíráme brzy</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="leaves"></div>
+  <div class="band-track">
+    <span>Tělo <i></i> Mysl <i></i> Rovnováha <i></i> Komunita <i></i> Síla <i></i> Elegance <i></i> Stabilita <i></i></span>
+    <span>Tělo <i></i> Mysl <i></i> Rovnováha <i></i> Komunita <i></i> Síla <i></i> Elegance <i></i> Stabilita <i></i></span>
+  </div>
+</div>
+
+<section class="sec intro">
+  <div class="wrap intro-grid">
+    <figure class="arch intro-img reveal"><img src="assets/img/pilates-studio.jpg" alt="Lekce pilates ve světlém studiu" loading="lazy"></figure>
+    <div class="intro-copy">
+      <p class="kicker reveal">O A Studiu</p>
+      <h2 class="h2 reveal">Víc než<br>jen lekce</h2>
+      <p class="reveal">A Studio je místo, kde se potkává síla, klid a ženská energie. Vytváříme prostor, ve kterém můžete zpomalit, posílit se a cítit se dobře — každý den.</p>
+      <p class="reveal">Malé skupiny, lektorky, které vás znají jménem, a lekce barre a pilates pro začátečnice i pokročilé.</p>
+      <blockquote class="quote-sm reveal">„Silnější tělo. Klidnější mysl. Spokojenější vy.“</blockquote>
+      <a href="o-nas/" class="link reveal">Náš příběh <svg><use href="#i-arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--beige">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kicker reveal">Naše lekce</p><h2 class="h2 reveal">Barre &amp; Pilates</h2></div>
+      <a href="lekce/" class="link reveal">Všechny lekce <svg><use href="#i-arr"/></svg></a>
+    </div>
+    <div class="duo-cards">
+      <a href="lekce/#barre" class="dcard reveal">
+        <figure class="arch"><img src="assets/img/barre-lekce.jpg" alt="Lekce barre u tyče" loading="lazy"></figure>
+        <div class="dcard-body"><span class="dcard-n">01</span><h3>Barre</h3><p>Síla, tvar, energie. Balet potkává fitness — drobné přesné pohyby u tyče, které tvarují celé tělo.</p><span class="link">Lekce barre <svg><use href="#i-arr"/></svg></span></div>
+      </a>
+      <a href="lekce/#pilates" class="dcard reveal">
+        <figure class="arch"><img src="assets/img/pilates-nohy.jpg" alt="Lekce pilates na podložce" loading="lazy"></figure>
+        <div class="dcard-body"><span class="dcard-n">02</span><h3>Pilates</h3><p>Stabilita, mobilita, zdraví. Silný střed těla, zdravá záda a dech, který zklidní hlavu.</p><span class="link">Lekce pilates <svg><use href="#i-arr"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="windows" aria-label="Motta A Studia">
+  <div class="wrap windows-grid">
+    <div class="win reveal"><div class="leaves"></div><p>Silnější žena<br>tvoří krásnější svět.</p></div>
+    <div class="win win--tall reveal"><div class="leaves"></div><svg class="win-logo"><use href="#logo-full"/></svg></div>
+    <div class="win reveal"><div class="leaves"></div><p>Disciplína dnes,<br>svoboda zítra.</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap sched-wrap">
+    <div class="sched-intro">
+      <p class="kicker reveal">Rozvrh lekcí</p>
+      <h2 class="h2 reveal">Vyberte si<br>svůj čas</h2>
+      <p class="reveal">Rezervace zabere minutu — i z telefonu. Vyberete den, lekci a máte své místo.</p>
+      <a href="rozvrh/" class="link reveal">Celý rozvrh <svg><use href="#i-arr"/></svg></a>
+    </div>
+    <div class="reveal">{{ schedule_table(schedule, true) }}</div>
+  </div>
+</section>
+
+<section class="quote-dark">
+  <div class="wrap">
+    <p class="big-quote reveal">„Nejde jen o pohyb.<br>Jde o to, jak se díky němu cítíte.“</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head head--single"><p class="kicker reveal">Poprvé v A Studiu</p><h2 class="h2 reveal">Tři kroky<br>na podložku</h2></div>
+    <ol class="steps reveal-group">
+      <li><span>01</span><h3>Rezervujte si místo</h3><p>Vyberte lekci v rozvrhu — pro začátek doporučujeme Barre Basic nebo Pilates Mat.</p></li>
+      <li><span>02</span><h3>Přijďte o 10 minut dřív</h3><p>Ukážeme vám studio, šatnu a lektorka se zeptá, jak se cítíte.</p></li>
+      <li><span>03</span><h3>Užijte si lekci</h3><p>Stačí pohodlné oblečení a protiskluzové ponožky. Vše ostatní máme připravené.</p></li>
+    </ol>
+    <div class="first-offer reveal">
+      <div><p class="kicker">První lekce</p><p class="first-price">{{ pricing.single[0].price }}</p></div>
+      <p>Zvýhodněná první návštěva — ať si A Studio vyzkoušíte bez váhání.</p>
+      <a href="cenik/" class="btn btn--dark">Ceník a permanentky <svg><use href="#i-arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--beige ig">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="kicker reveal">Instagram</p><h2 class="h2 reveal">@{{ site.instagram }}</h2></div>
+      <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener" class="link reveal">Sledovat <svg><use href="#i-arr"/></svg></a>
+    </div>
+    <div class="ig-grid reveal-group">
+      <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener"><img src="assets/img/barre-spicky.jpg" alt="" loading="lazy"></a>
+      <div class="ig-text"><p>Disciplína<br>přináší<br>svobodu</p></div>
+      <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener"><img src="assets/img/pilates-klek.jpg" alt="" loading="lazy"></a>
+      <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener"><img src="assets/img/detail-vazy.jpg" alt="" loading="lazy"></a>
+      <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener"><img src="assets/img/protazeni.jpg" alt="" loading="lazy"></a>
+      <div class="ig-text ig-text--yellow"><div class="leaves"></div><p>Pohyb je<br>péče o sebe.</p></div>
+    </div>
+  </div>
+</section>
+
+{{ cta_band('Místo, kde<br><em>patříte</em>', 'Rezervujte si první lekci a přijďte se podívat, jak se u nás cvičí.') }}
+{% endblock %}

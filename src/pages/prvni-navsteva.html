@@ -1,0 +1,37 @@
+{# {"out": "prvni-navsteva/index.html", "id": "prvni", "title": "První návštěva — A Studio Odolena Voda", "desc": "Co vás čeká na první lekci barre nebo pilates, co si vzít s sebou a kdy přijít."} #}
+{% extends "base.html" %}
+{% from "macros.html" import page_hero, cta_band with context %}
+{% block content %}
+{{ page_hero('První návštěva', 'Poprvé<br><em>v A Studiu</em>', 'Nemusíte nic umět ani mít. Stačí přijít — o zbytek se postaráme.', 'lektorka-meditace.jpg') }}
+
+<section class="sec">
+  <div class="wrap">
+    <ol class="timeline">
+      <li class="reveal"><span class="tl-time">Předem</span><div><h2>Rezervujte si lekci</h2><p>Pro začátek doporučujeme <b>Barre Basic</b> nebo <b>Pilates Mat</b>. Rezervaci uděláte v rozvrhu během minuty. První lekce je zvýhodněná.</p><a href="{{ root }}rozvrh/" class="link">Rozvrh <svg><use href="#i-arr"/></svg></a></div></li>
+      <li class="reveal"><span class="tl-time">10 min před</span><div><h2>Přijďte o chvilku dřív</h2><p>Přivítáme vás, ukážeme šatnu a lektorka se zeptá na případná zranění nebo omezení. V klidu se převléknete a naladíte.</p></div></li>
+      <li class="reveal"><span class="tl-time">50–55 min</span><div><h2>Lekce</h2><p>Cvičí se naboso nebo v protiskluzových ponožkách. Lektorka ukazuje jednodušší i náročnější varianty — jdete svým tempem.</p></div></li>
+      <li class="reveal"><span class="tl-time">Po lekci</span><div><h2>Chvilka pro vás</h2><p>Doplňte vodu, zeptejte se na cokoliv a vyberte si permanentku, pokud se vám u nás líbilo.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec sec--beige">
+  <div class="wrap bring">
+    <div><p class="kicker reveal">Co si vzít s sebou</p><h2 class="h2 reveal">Do tašky<br><em>patří</em></h2></div>
+    <ul class="bring-list reveal-group">
+      <li><b>Pohodlné oblečení</b><span>Legíny a přiléhavé tričko nebo top — ať lektorka vidí postavení těla.</span></li>
+      <li><b>Protiskluzové ponožky</b><span>Na barre i pilates. Pokud je nemáte, můžete je koupit ve studiu.</span></li>
+      <li><b>Lahev s vodou</b><span>Pitná voda je ve studiu k dispozici.</span></li>
+      <li><b>Dobrou náladu</b><span>Podložky, míčky, činky i gumy máme připravené.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap first-faq">
+    <div><p class="kicker reveal">Máte otázky?</p><h2 class="h2 reveal">Nejčastější<br>dotazy</h2><a href="{{ root }}faq/" class="link reveal">Všechny otázky <svg><use href="#i-arr"/></svg></a></div>
+    <div class="reveal">{% from "macros.html" import faq_list with context %}{{ faq_list(faq.groups[0]['items'][:3]) }}</div>
+  </div>
+</section>
+{{ cta_band('Vaše první<br><em>lekce čeká</em>', 'Za ' ~ pricing.single[0].price ~ ' si A Studio vyzkoušíte bez závazků.') }}
+{% endblock %}

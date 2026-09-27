@@ -1,0 +1,44 @@
+{# {"out": "lekce/index.html", "id": "lekce", "title": "Lekce Barre a Pilates — A Studio Odolena Voda", "desc": "Barre Basic, Barre Sculpt, Barre Burn, Pilates Mat, Pilates s pomůckami, Flow & Stretch a soukromé lekce."} #}
+{% extends "base.html" %}
+{% from "macros.html" import page_hero, level, cta_band with context %}
+{% block content %}
+{{ page_hero('Lekce', 'Barre <em>&amp;</em> Pilates', 'Malé skupiny, přesná technika a lektorka, která vás vidí. Vyberte si lekci podle nálady i úrovně.', 'barre-nohy.jpg') }}
+
+<section class="sec">
+  <div class="wrap">
+    <div class="filter" role="tablist" aria-label="Filtr lekcí">
+      <button class="chip is-on" data-filter="all">Vše</button>
+      <button class="chip" data-filter="Barre">Barre</button>
+      <button class="chip" data-filter="Pilates">Pilates</button>
+      <button class="chip" data-filter="Soukromě">Soukromě</button>
+    </div>
+    <div class="legend"><span>Náročnost</span>{{ level(1) }} lehká {{ level(2) }} střední {{ level(3) }} vyšší</div>
+
+    <div id="barre" class="lgroup-anchor"></div>
+    <div id="pilates" class="lgroup-anchor"></div>
+    <div class="lessons">
+      {% for l in lessons.lessons %}
+      <article class="lesson reveal" data-group="{{ l.group }}" id="{{ l.id }}">
+        <figure class="arch lesson-img"><img src="{{ root }}assets/img/{{ l.image|img }}" alt="{{ l.name }}" loading="lazy"></figure>
+        <div class="lesson-body">
+          <p class="lesson-meta"><span class="tag">{{ l.group }}</span><span>{{ l.length }}</span>{{ level(l.level) }}</p>
+          <h2>{{ l.name }}</h2>
+          <p class="lesson-for">{{ l.for }}</p>
+          <p>{{ l.text }}</p>
+          <a class="link" href="{{ root }}rozvrh/">Najít v rozvrhu <svg><use href="#i-arr"/></svg></a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--beige">
+  <div class="wrap compare">
+    <div class="reveal"><p class="kicker">Barre</p><h2 class="h3">Balet potkává fitness</h2><p>Cvičí se u baletní tyče i na podložce. Malé, přesné pohyby a izometrické výdrže, které tvarují nohy, hýždě a paže a zpevní postavu. Hudba, rytmus a energie.</p></div>
+    <div class="reveal"><p class="kicker">Pilates</p><h2 class="h3">Síla z vašeho středu</h2><p>Metoda zaměřená na hluboký stabilizační systém, páteř a dech. Posiluje a zároveň protahuje, zlepšuje držení těla a pomáhá od bolavých zad.</p></div>
+  </div>
+</section>
+
+{{ cta_band('Nevíte, <em>kde začít?</em>', 'Pro první návštěvu doporučujeme Barre Basic nebo Pilates Mat. A když si nejste jistá, napište nám.', 'Rozvrh a rezervace') }}
+{% endblock %}
