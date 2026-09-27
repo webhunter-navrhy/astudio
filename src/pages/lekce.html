@@ -19,7 +19,7 @@
     <div class="lessons">
       {% for l in lessons.lessons %}
       <article class="lesson reveal" data-group="{{ l.group }}" id="{{ l.id }}">
-        <figure class="arch lesson-img"><img src="{{ root }}assets/img/{{ l.image|img }}" alt="{{ l.name }}" loading="lazy"></figure>
+        <figure class="arch lesson-img"><img src="{{ root }}{{ l.image|img }}" alt="{{ l.name }}" loading="lazy"></figure>
         <div class="lesson-body">
           <p class="lesson-meta"><span class="tag">{{ l.group }}</span><span>{{ l.length }}</span>{{ level(l.level) }}</p>
           <h2>{{ l.name }}</h2>

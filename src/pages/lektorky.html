@@ -7,7 +7,7 @@
   <div class="wrap">
     <div class="team reveal-group">
       <article class="member member--founder">
-        <figure class="arch"><img src="{{ root }}assets/img/{{ team.founder.image|img }}" alt="" loading="lazy"></figure>
+        <figure class="arch"><img src="{{ root }}{{ team.founder.image|img }}" alt="" loading="lazy"></figure>
         <p class="member-role">{{ team.founder.role }}</p>
         <h2>{{ team.founder.name }}</h2>
         <p>{{ team.founder.story[0] }}</p>
@@ -15,7 +15,7 @@
       </article>
       {% for m in team.team %}
       <article class="member">
-        <figure class="arch"><img src="{{ root }}assets/img/{{ m.image|img }}" alt="" loading="lazy"></figure>
+        <figure class="arch"><img src="{{ root }}{{ m.image|img }}" alt="" loading="lazy"></figure>
         <p class="member-role">{{ m.role }}</p>
         <h2>{{ m.name }}</h2>
         <p>{{ m.text }}</p>

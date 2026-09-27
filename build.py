@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
-"""A Studio — sestaví statický web ze šablon (src/) a dat (content/*.json).
-Obsah (lekce, rozvrh, ceník, lektorky, FAQ, kontakty) se upravuje v content/ — ručně nebo přes CMS v /admin."""
-import hashlib, json, pathlib, re, shutil
+"""A Studio — sestaví statický web ze šablon (src/) a dat (_data/*.json) do site/.
+Obsah (lekce, rozvrh, ceník, lektorky, FAQ, kontakty) se upravuje v administraci na /admin/
+(backend: webhunter-admin na Cloudflare) nebo ručně v _data/."""
+import hashlib, json, os, pathlib, re, shutil
 from jinja2 import Environment, FileSystemLoader
 
 ROOT = pathlib.Path(__file__).parent
-SRC, CONTENT, OUT = ROOT / 'src', ROOT / 'content', ROOT / 'site'
+SRC, CONTENT, OUT = ROOT / 'src', ROOT / '_data', ROOT / 'site'
 
 if OUT.exists():
     shutil.rmtree(OUT)
 shutil.copytree(ROOT / 'assets', OUT / 'assets')
 for f in ('style.css', 'main.js', 'favicon.svg'):
     shutil.copy(SRC / f, OUT / 'assets' / f)
-if (ROOT / 'admin').exists():
-    shutil.copytree(ROOT / 'admin', OUT / 'admin')
+for f in (ROOT / 'brand').glob('logo-*.svg'):
+    shutil.copy(f, OUT / 'assets' / f.name)
+shutil.copytree(ROOT / 'img', OUT / 'img', ignore=shutil.ignore_patterns('.gitkeep'))  # fotky nahrané v administraci
+shutil.copytree(ROOT / 'admin', OUT / 'admin')
 
 def svg_parts(name):
     s = (ROOT / 'brand' / f'{name}.svg').read_text()
@@ -30,7 +33,8 @@ common = dict(
          ('prvni', 'prvni-navsteva/', 'První návštěva'), ('kontakt', 'kontakt/', 'Kontakt')],
 )
 env = Environment(loader=FileSystemLoader([str(SRC), str(SRC / 'pages')]), autoescape=False)
-env.filters['img'] = lambda p: str(p).rsplit('/', 1)[-1]  # CMS ukládá /assets/img/x.jpg, šablony chtějí x.jpg
+# obrázek z dat → cesta od kořene webu: nahrané v administraci (img/uploads/…) nebo výchozí (assets/img/…)
+env.filters['img'] = lambda p: str(p) if str(p).startswith('img/') else 'assets/img/' + str(p).rsplit('/', 1)[-1]
 for page in sorted((SRC / 'pages').glob('*.html')):
     meta = json.loads(re.match(r'\{#\s*(\{.*?\})\s*#\}', page.read_text(), re.S).group(1))
     depth = meta['out'].count('/')
@@ -40,3 +44,12 @@ for page in sorted((SRC / 'pages').glob('*.html')):
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)
     print('✓', meta['out'])
+
+# seznam obrázků pro výběr v administraci + verze pro hlídání zveřejnění
+imgs = sorted('assets/img/' + f.name for f in (OUT / 'assets/img').glob('*.jpg') if not f.name.startswith(('og', 'apple')))
+imgs += sorted(str(f.relative_to(OUT)) for f in (OUT / 'img').rglob('*') if f.is_file())
+(OUT / 'admin/images.json').write_text(json.dumps(imgs, ensure_ascii=False))
+(OUT / 'version.json').write_text(json.dumps({'sha': os.environ.get('GITHUB_SHA', 'local')}))
+(OUT / '.nojekyll').touch()
+ai = OUT / 'admin/index.html'
+ai.write_text(ai.read_text().replace('__V_ACSS__', h('admin/admin.css')).replace('__V_AJS__', h('admin/admin.js')))
