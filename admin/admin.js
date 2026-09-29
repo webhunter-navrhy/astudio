@@ -1,5 +1,5 @@
 /* =====================================================================
-   Administrace A Studia
+   Administrace A-Studia
    Data jsou v repozitáři webu (_data/*.json). Uložení = jeden commit přes
    backend webhunter-admin (Cloudflare Worker, přihlášení heslem).
    GitHub Action pak web přegeneruje (~1 min).
@@ -302,7 +302,7 @@ function vDash() {
       kontakty: 'Adresa, telefon, Instagram a odkaz na rezervace', lekce: 'Druhy lekcí, popisy a fotky', rozvrh: 'Týdenní rozvrh na webu',
       cenik: 'Vstupy, permanentky, MultiSport', tym: 'Váš příběh, kvalifikace a lektorky', faq: 'Otázky a odpovědi',
     }[id])));
-  view('Dobrý den 👋', 'Tady upravíte obsah webu A Studia. Změny uložíte tlačítkem dole — na webu se objeví zhruba za minutu.',
+  view('Dobrý den 👋', 'Tady upravíte obsah webu A-Studia. Změny uložíte tlačítkem dole — na webu se objeví zhruba za minutu.',
     S.def ? h('div.banner', { html: `${IC.info}<p>Používáte výchozí heslo <b>admin</b>. <a href="#/nastaveni">Nastavte si prosím vlastní heslo</a>, ať do administrace nemůže nikdo jiný.</p>` }) : null,
     h('div.tiles', {}, tiles),
     card('Jak to funguje', null, h('p', { style: 'color:var(--muted);font-size:.93rem' }, 'Upravte, co potřebujete, v libovolné sekci. Dole se objeví lišta „Uložit změny“ — jedním kliknutím uložíte vše najednou. Nahoře (na počítači) uvidíte, kdy jsou změny na webu.')),
@@ -318,7 +318,7 @@ function vSite() {
     card('Kontakt', null,
       row2(fText(d, 'phone', 'Telefon', { type: 'tel' }), fText(d, 'email', 'E-mail', { type: 'email' })),
       fText(d, 'instagram', 'Instagram (bez @)'),
-      row2(fText(d, 'address', 'Adresa'), fText(d, 'city', 'Město')),
+      row2(fText(d, 'address', 'Ulice a číslo'), fText(d, 'zip', 'PSČ')), fText(d, 'city', 'Město'),
       fText(d, 'address_note', 'Poznámka k adrese', { multi: true, rows: 2 }),
       fText(d, 'parking', 'Parkování', { multi: true, rows: 3 })));
 }
@@ -330,12 +330,12 @@ function vLessons() {
     fList(arr, {
       title: (l) => l.name, sub: (l) => [l.group, l.length].filter(Boolean).join(' · '), thumb: (l) => l.image,
       addLabel: 'Přidat lekci',
-      make: () => ({ id: '', group: 'Barre', name: '', length: '50 min', level: 1, for: '', text: '', image: 'barre-lekce.jpg' }),
+      make: () => ({ id: '', group: 'Barre', name: '', length: '55 min', level: 1, for: '', text: '', image: 'barre-lekce.jpg' }),
       body: (l, b, r) => b.append(
         fText(l, 'name', 'Název lekce', { on: r }),
-        row2(fSelect(l, 'group', 'Typ', [['Barre', 'Barre'], ['Pilates', 'Pilates'], ['Soukromě', 'Soukromá lekce']], { on: r }), fText(l, 'length', 'Délka', { on: r, ph: '50 min' })),
+        row2(fSelect(l, 'group', 'Typ', [['Barre', 'Barre'], ['Pilates', 'Pilates'], ['Soukromě', 'Soukromá lekce']], { on: r }), fText(l, 'length', 'Délka', { on: r, ph: '55 min' })),
         row2(fSelect(l, 'level', 'Náročnost', LEVELS, { num: true }), fText(l, 'for', 'Pro koho', { ph: 'Pro začátečnice…' })),
-        fText(l, 'text', 'Popis', { multi: true, rows: 4 }),
+        fText(l, 'text', 'Popis', { multi: true, rows: 7, hint: 'Nový řádek = nový odstavec.' }),
         fImage(l, 'image', 'Fotka', l.name, r)),
     }));
 }
@@ -352,11 +352,11 @@ function vSchedule() {
     const rows = day.classes.map((c, i) => {
       const t = h('input', { type: 'time', value: c.time, 'aria-label': 'Čas', oninput: (e) => { c.time = e.target.value; bump(); } });
       const n = h('input', { type: 'text', value: c.lesson, list: 'lesson-names', placeholder: 'Lekce', 'aria-label': 'Lekce', oninput: (e) => { c.lesson = e.target.value; bump(); } });
-      const len = h('input.len', { type: 'text', value: c.len, placeholder: '50 min', 'aria-label': 'Délka', oninput: (e) => { c.len = e.target.value; bump(); } });
+      const len = h('input.len', { type: 'text', value: c.len, placeholder: '55 min', 'aria-label': 'Délka', oninput: (e) => { c.len = e.target.value; bump(); } });
       return h('div.cls', {}, t, n, len, h('button.btn.btn-icon.btn-ghost.del', { type: 'button', 'aria-label': 'Smazat lekci', onclick: () => { day.classes.splice(i, 1); bump(); renderTabs(); renderDay(); }, html: IC.trash }));
     });
     panel.replaceChildren(card(day.day, day.classes.length ? null : 'Tento den nejsou žádné lekce.', ...rows,
-      h('button.btn.add', { type: 'button', onclick: () => { day.classes.push({ time: '18:00', lesson: lessonNames[0] || '', len: '50 min' }); day.classes.sort((a, b) => a.time.localeCompare(b.time)); bump(); renderTabs(); renderDay(); }, html: IC.plus + 'Přidat lekci do rozvrhu' })));
+      h('button.btn.add', { type: 'button', onclick: () => { day.classes.push({ time: '18:00', lesson: lessonNames[0] || '', len: '55 min' }); day.classes.sort((a, b) => a.time.localeCompare(b.time)); bump(); renderTabs(); renderDay(); }, html: IC.plus + 'Přidat lekci do rozvrhu' })));
   };
   renderTabs(); renderDay();
   view('Rozvrh', 'Týdenní rozvrh zobrazený na webu. Rezervace a volná místa řeší váš rezervační systém.',
@@ -369,9 +369,9 @@ function vPricing() {
     card('Permanentky', null, fList(d.passes, {
       title: (p) => p.name, sub: (p) => [p.price, p.featured ? 'zvýrazněná' : ''].filter(Boolean).join(' · '), addLabel: 'Přidat permanentku',
       make: () => ({ name: '', price: '', per: '', valid: '', featured: false }),
-      body: (p, b, r) => b.append(row2(fText(p, 'name', 'Název', { on: r }), fText(p, 'price', 'Cena', { on: r })), row2(fText(p, 'per', 'Cena za lekci / popis'), fText(p, 'valid', 'Platnost')), fCheck(p, 'featured', 'Zvýraznit jako „Nejoblíbenější“')),
+      body: (p, b, r) => b.append(row2(fText(p, 'name', 'Název', { on: r }), fText(p, 'price', 'Cena', { on: r })), row2(fText(p, 'per', 'Cena za lekci / popis'), fText(p, 'valid', 'Platnost')), fCheck(p, 'featured', 'Zvýraznit (žluté pozadí)')),
     })),
-    card('Jednotlivé vstupy', 'První položka se zobrazuje i jako cena první lekce na úvodní stránce.', fList(d.single, {
+    card('Jednotlivé vstupy', null, fList(d.single, {
       title: (p) => p.name, sub: (p) => p.price, addLabel: 'Přidat položku',
       make: () => ({ name: '', price: '', note: '' }),
       body: (p, b, r) => b.append(row2(fText(p, 'name', 'Název', { on: r }), fText(p, 'price', 'Cena', { on: r })), fText(p, 'note', 'Poznámka')),
@@ -385,7 +385,7 @@ function vTeam() {
     card('O mně', null,
       row2(fText(f, 'name', 'Jméno'), fText(f, 'role', 'Role', { ph: 'Majitelka & lektorka' })),
       fImage(f, 'image', 'Portrét', 'portret'),
-      fStrList(f.story, 'Příběh studia (odstavce)', { multi: true, add: 'Přidat odstavec' }),
+      fStrList(f.story, 'Můj příběh (odstavce, na stránce O studiu a Lektorky)', { multi: true, add: 'Přidat odstavec' }),
       fStrList(f.quals, 'Zkušenosti a kvalifikace', { add: 'Přidat položku' })),
     card('Lektorky', null, fList(S.D.team.team, {
       title: (m) => m.name, sub: (m) => m.role, thumb: (m) => m.image, addLabel: 'Přidat lektorku',
@@ -401,7 +401,7 @@ function vFaq() {
       make: () => ({ title: 'Nová skupina', items: [] }),
       body: (g, b, r) => b.append(fText(g, 'title', 'Název skupiny', { on: r }), fList(g.items, {
         title: (x) => x.q, addLabel: 'Přidat otázku', make: () => ({ q: '', a: '' }),
-        body: (x, bb, rr) => bb.append(fText(x, 'q', 'Otázka', { on: rr }), fText(x, 'a', 'Odpověď', { multi: true, rows: 4 })),
+        body: (x, bb, rr) => bb.append(fText(x, 'q', 'Otázka', { on: rr }), fText(x, 'a', 'Odpověď', { multi: true, rows: 4, hint: 'Nový řádek = nový odstavec.' })),
       })),
     }));
 }
@@ -436,7 +436,7 @@ function renderShell() {
   $('#app').replaceChildren(h('div.shell', {},
     h('header.top', {},
       h('button.btn.btn-icon.btn-ghost.menu-btn', { type: 'button', 'aria-label': 'Menu', onclick: () => nav.classList.add('open'), html: IC.menu }),
-      h('a.top-logo', { href: '#/' }, h('img', { src: CFG.site + 'assets/logo-a-studio.svg', alt: 'A Studio' }), h('span', {}, 'Administrace')),
+      h('a.top-logo', { href: '#/' }, h('img', { src: CFG.site + 'assets/logo-a-studio.svg', alt: 'A-Studio' }), h('span', {}, 'Administrace')),
       h('div.pub'), h('a.btn.btn-sm', { href: CFG.site, target: '_blank', rel: 'noopener', html: IC.eye + '<span>Web</span>' })),
     h('div.layout', {}, nav, h('main.view'))), bar);
   initPub();
@@ -469,7 +469,7 @@ function renderLogin(msg = '') {
       S.sess = r.token; S.def = r.def; saveSess(); await start();
     } catch (er) { err.textContent = er.message; btn.disabled = false; btn.textContent = 'Přihlásit se'; inp.select(); }
   } },
-  h('img', { src: CFG.site + 'assets/logo-a-studio.svg', alt: 'A Studio' }), h('h1', {}, 'Administrace webu'), h('p', {}, 'Přihlaste se heslem k administraci.'),
+  h('img', { src: CFG.site + 'assets/logo-a-studio.svg', alt: 'A-Studio' }), h('h1', {}, 'Administrace webu'), h('p', {}, 'Přihlaste se heslem k administraci.'),
   h('label.field', {}, h('span', {}, 'Heslo'), h('div.pw-wrap', {}, inp, h('button.pw-eye', { type: 'button', 'aria-label': 'Zobrazit heslo', onclick: () => { inp.type = inp.type === 'password' ? 'text' : 'password'; }, html: IC.eye }))),
   btn, err);
   $('#app').replaceChildren(h('div.login', {}, form));

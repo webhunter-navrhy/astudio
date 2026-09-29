@@ -1,16 +1,16 @@
-{# {"out": "prvni-navsteva/index.html", "id": "prvni", "title": "První návštěva — A Studio Odolena Voda", "desc": "Co vás čeká na první lekci barre nebo pilates, co si vzít s sebou a kdy přijít."} #}
+{# {"out": "prvni-navsteva/index.html", "id": "prvni", "title": "První návštěva — A-Studio Odolena Voda", "desc": "Co vás čeká na první lekci barre nebo pilates, co si vzít s sebou a kdy přijít."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero, cta_band with context %}
 {% block content %}
-{{ page_hero('První návštěva', 'Poprvé<br><em>v A Studiu</em>', 'Nemusíte nic umět ani mít. Stačí přijít — o zbytek se postaráme.', 'lektorka-meditace.jpg') }}
+{{ page_hero('První návštěva', 'Poprvé<br><em>v A-Studiu</em>', 'Nemusíte nic umět ani mít. Stačí přijít — o zbytek se postaráme.', 'lektorka-meditace.jpg') }}
 
 <section class="sec">
   <div class="wrap">
     <ol class="timeline">
-      <li class="reveal"><span class="tl-time">Předem</span><div><h2>Rezervujte si lekci</h2><p>Pro začátek doporučujeme <b>Barre Basic</b> nebo <b>Pilates Mat</b>. Rezervaci uděláte v rozvrhu během minuty. První lekce je zvýhodněná.</p><a href="{{ root }}rozvrh/" class="link">Rozvrh <svg><use href="#i-arr"/></svg></a></div></li>
-      <li class="reveal"><span class="tl-time">10 min před</span><div><h2>Přijďte o chvilku dřív</h2><p>Přivítáme vás, ukážeme šatnu a lektorka se zeptá na případná zranění nebo omezení. V klidu se převléknete a naladíte.</p></div></li>
-      <li class="reveal"><span class="tl-time">50–55 min</span><div><h2>Lekce</h2><p>Cvičí se naboso nebo v protiskluzových ponožkách. Lektorka ukazuje jednodušší i náročnější varianty — jdete svým tempem.</p></div></li>
-      <li class="reveal"><span class="tl-time">Po lekci</span><div><h2>Chvilka pro vás</h2><p>Doplňte vodu, zeptejte se na cokoliv a vyberte si permanentku, pokud se vám u nás líbilo.</p></div></li>
+      <li class="reveal"><span class="tl-time">Předem</span><div><h2>Rezervuj si lekci</h2><p>Místo na lekci si rezervujete jednoduše přes náš rezervační systém. Lekci můžete uhradit z nabitého kreditu nebo z permanentky. Místo máte rezervované až po zaplacení lekce.</p><p>Plány se mění, to chápeme. Rezervaci proto můžete bezplatně zrušit nejpozději 6&nbsp;hodin před začátkem lekce.</p><a href="{{ root }}rozvrh/" class="link">Rozvrh a rezervace <svg><use href="#i-arr"/></svg></a></div></li>
+      <li class="reveal"><span class="tl-time">Po zaplacení</span><div><h2>Jak do studia?</h2><p>A-Studio funguje bez recepce a bez klíčů. Po zaplacení rezervace ti přijde osobní vstupní kód, který bude aktivní 20 minut před začátkem lekce.</p><p>Kódem si jednoduše odemkneš vstupní dveře a můžeš jít rovnou dovnitř.</p></div></li>
+      <li class="reveal"><span class="tl-time">Před lekcí</span><div><h2>Přijďte o chvilku dříve</h2><p>V klidu se převlékni, dej si naši vodu nebo čaj a udělej si chvilku pro sebe ještě před začátkem lekce.</p></div></li>
+      <li class="reveal"><span class="tl-time">55 min</span><div><h2>Lekce</h2><p>Cvičí se naboso nebo v protiskluzových ponožkách. Lektorka ukazuje jednodušší i náročnější varianty — jdete svým tempem.</p></div></li>
     </ol>
   </div>
 </section>
@@ -33,5 +33,5 @@
     <div class="reveal">{% from "macros.html" import faq_list with context %}{{ faq_list(faq.groups[0]['items'][:3]) }}</div>
   </div>
 </section>
-{{ cta_band('Vaše první<br><em>lekce čeká</em>', 'Za ' ~ pricing.single[0].price ~ ' si A Studio vyzkoušíte bez závazků.') }}
+{{ cta_band('Vaše první<br><em>lekce čeká.</em>', '') }}
 {% endblock %}

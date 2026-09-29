@@ -1,15 +1,18 @@
-{# {"out": "o-nas/index.html", "id": "onas", "title": "O A Studiu — příběh studia a zakladatelky", "desc": "Příběh A Studia v Odolené Vodě, představení zakladatelky, její zkušenosti a kvalifikace."} #}
+{# {"out": "o-nas/index.html", "id": "onas", "title": "O A-Studiu — příběh studia a zakladatelky", "desc": "Příběh A-Studia v Odolené Vodě, představení zakladatelky, její zkušenosti a kvalifikace."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero, cta_band with context %}
 {% block content %}
-{{ page_hero('O A Studiu', 'Místo, kde<br><em>patříte</em>', 'Boutique studio pro ženy, které chtějí být silnější — v těle i v hlavě.', 'interier-oblouk.jpg') }}
+{{ page_hero('O A-Studiu', 'Místo, kde<br><em>patříte</em>', 'Boutique studio pro ženy, které chtějí být silnější — v těle i v hlavě.', 'interier-oblouk.jpg') }}
 
 <section class="sec">
   <div class="wrap story">
     <div class="story-copy">
-      <p class="kicker reveal">Příběh studia</p>
-      <h2 class="h2 reveal">Pohyb je<br><em>péče o sebe</em></h2>
-      {% for p in team.founder.story %}<p class="reveal">{{ p }}</p>{% endfor %}
+      <p class="kicker reveal">O A-Studiu</p>
+      <h2 class="h2 reveal">Víc než<br><em>jen lekce</em></h2>
+      <p class="reveal">A-Studio jsme vytvořily pro Vás ženy. Místo, kde to voní, je útulno a kde jsme jen my ŽENY.</p>
+      <p class="reveal">Bez hodnocení a bez pocitu, že musíte něco dokazovat. Chceme znát Vaše jméno, vědět, co Vaše tělo potřebuje a jaká máte omezení. Nechceme být studio, kam jen přijdete na lekci a zase odejdete.</p>
+      <p class="reveal">Čeká Vás přátelská atmosféra, malé skupiny a osobní přístup.</p>
+      <blockquote class="quote-sm reveal">Nejste číslo v rezervačním systému.<br><span class="caps">Jste naše klientka.</span></blockquote>
     </div>
     <div class="story-values reveal-group">
       <div><h3>Tělo</h3><p>Silné, pohyblivé a zdravé — bez honby za dokonalostí.</p></div>
@@ -22,12 +25,12 @@
 
 <section class="sec sec--beige" id="o-mne">
   <div class="wrap founder">
-    <figure class="arch founder-img reveal"><img src="{{ root }}{{ team.founder.image|img }}" alt="Zakladatelka A Studia" loading="lazy"><figcaption>Ilustrační foto — nahradíme vaším portrétem</figcaption></figure>
+    <figure class="arch founder-img reveal"><img src="{{ root }}{{ team.founder.image|img }}" alt="Zakladatelka A-Studia" loading="lazy"><figcaption>Ilustrační foto — nahradíme vaším portrétem</figcaption></figure>
     <div>
       <p class="kicker reveal">O mně</p>
       <h2 class="h2 reveal">{{ team.founder.name }}</h2>
       <p class="founder-role reveal">{{ team.founder.role }}</p>
-      <p class="reveal">Tady bude vaše osobní představení — jak jste se dostala k barre a pilates, co vás na pohybu baví a proč jste se rozhodla otevřít studio právě v Odolené Vodě.</p>
+      {% for p in team.founder.story %}<p class="reveal{% if p|length < 60 %} founder-accent{% endif %}">{{ p }}</p>{% endfor %}
       <p class="kicker reveal" style="margin-top:2rem">Zkušenosti a kvalifikace</p>
       <ul class="quals reveal-group">{% for q in team.founder.quals %}<li>{{ q }}</li>{% endfor %}</ul>
       <a href="{{ root }}lektorky/" class="link reveal">Poznejte lektorky <svg><use href="#i-arr"/></svg></a>
@@ -36,8 +39,8 @@
 </section>
 
 <section class="storefront">
-  <figure class="reveal"><img src="{{ root }}assets/img/vyloha.jpg" alt="Vizualizace výlohy A Studia se žlutým polepem" loading="lazy"></figure>
+  <figure class="reveal"><picture><source srcset="{{ root }}assets/img/polep-dvere.webp" type="image/webp"><img src="{{ root }}assets/img/polep-dvere.jpg" alt="Vstup do A-Studia se žlutým polepem dveří a oken" width="1312" height="1199" loading="lazy"></picture></figure>
   <div class="wrap storefront-copy reveal"><p class="kicker">Brzy otevíráme</p><p>Studio je ve výstavbě. Sledujte <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a> — ukážeme vám, jak vzniká.</p></div>
 </section>
-{{ cta_band('Přijďte<br><em>se podívat</em>', 'První lekce je zvýhodněná. Těšíme se na vás.') }}
+{{ cta_band('Přijďte se k nám<br><em>podívat</em>', 'Těšíme se na Vás.') }}
 {% endblock %}

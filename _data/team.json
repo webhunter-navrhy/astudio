@@ -1,18 +1,45 @@
 {
   "founder": {
-    "name": "Zakladatelka A Studia",
+    "name": "Zakladatelka A-Studia",
     "role": "Majitelka & lektorka Barre a Pilates",
     "image": "lektorka-sed.jpg",
     "story": [
-      "A Studio vzniklo z touhy vytvořit v Odolené Vodě místo, kam se ženy budou těšit. Ne fitko, kde se počítají opakování, ale prostor, kde se pohyb stává péčí o sebe.",
-      "Barre a pilates mi změnily vztah k vlastnímu tělu — naučily mě sílu bez tlaku a disciplínu, která přináší svobodu. To chci předávat dál.",
-      "V A Studiu se potkáte s malými skupinami, osobním přístupem a lektorkami, které si vás pamatují jménem."
+      "Pohyb mě provází vlastně celý život. Začínala jsem sportovním aerobikem, kterému jsem se věnovala na závodní úrovni. Později jsem trénovala děti a postupně zjistila, že ještě víc mě baví předávat energii dospělým.",
+      "Za více než 14 let lektorování jsem prošla různými styly od aerobiku po silové HIIT tréninky. Vždycky jsem byla spíše dynamický typ – potřebuji energii, tempo a hlavně hudbu. Přes hudbu cítím pohyb.",
+      "Po porodech jsem ale sama začala hledat trochu jinou cestu a našla jsem Pilates. Naučil mě zpomalit, víc vnímat vlastní tělo a pochopit, že kvalitní pohyb nemusí být vždycky ten nejrychlejší a nejintenzivnější.",
+      "A pak přišlo Barre…",
+      "Pamatuju si svojí první lekci u tyče. Cvičila jsem a u toho brečela. Ne proto, že to bolelo, ale protože jsem okamžitě věděla, že přesně tohle jsem celou tu dobu hledala. Hudba, síla, ladnost, dynamika a pohyb v jednom.",
+      "Barre byla láska na první pohled a právě z téhle lásky nakonec vzniklo A-Studio."
     ],
-    "quals": ["Certifikovaná lektorka Barre", "Certifikace Pilates Mat", "Kurz zdravotní tělesné výchovy", "Průběžné vzdělávání v oblasti prenatálního a postnatálního cvičení"]
+    "quals": [
+      "Barre Academy Lenka Krejčová – Teacher training I",
+      "Barre Academy Lenka Krejčová – Teacher training II",
+      "Barrefit – Teacher Training Barcelona",
+      "Fyzio Barre – odborný workshop",
+      "Pilates instructor – 150h Teacher training Yoga4Yogi",
+      "Pilates reformer – Power Pilates",
+      "Body PUMPfx – Instructor certification",
+      "PILOXING Instructor certification"
+    ]
   },
   "team": [
-    {"name": "Jméno lektorky", "role": "Barre", "image": "barre-lekce.jpg", "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."},
-    {"name": "Jméno lektorky", "role": "Pilates", "image": "lektorka-meditace.jpg", "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."},
-    {"name": "Jméno lektorky", "role": "Barre & Stretch", "image": "lektorka-zada.jpg", "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."}
+    {
+      "name": "Jméno lektorky",
+      "role": "Barre",
+      "image": "barre-lekce.jpg",
+      "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."
+    },
+    {
+      "name": "Jméno lektorky",
+      "role": "Pilates",
+      "image": "lektorka-meditace.jpg",
+      "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."
+    },
+    {
+      "name": "Jméno lektorky",
+      "role": "Barre & Stretch",
+      "image": "lektorka-zada.jpg",
+      "text": "Krátké představení lektorky — co učí, co ji na pohybu baví a na co se u ní můžete těšit."
+    }
   ]
 }

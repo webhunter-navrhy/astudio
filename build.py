@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A Studio — sestaví statický web ze šablon (src/) a dat (_data/*.json) do site/.
+"""A-Studio — sestaví statický web ze šablon (src/) a dat (_data/*.json) do site/.
 Obsah (lekce, rozvrh, ceník, lektorky, FAQ, kontakty) se upravuje v administraci na /admin/
 (backend: webhunter-admin na Cloudflare) nebo ručně v _data/."""
 import hashlib, json, os, pathlib, re, shutil
@@ -35,6 +35,13 @@ common = dict(
 env = Environment(loader=FileSystemLoader([str(SRC), str(SRC / 'pages')]), autoescape=False)
 # obrázek z dat → cesta od kořene webu: nahrané v administraci (img/uploads/…) nebo výchozí (assets/img/…)
 env.filters['img'] = lambda p: str(p) if str(p).startswith('img/') else 'assets/img/' + str(p).rsplit('/', 1)[-1]
+# víceřádkový text z administrace → odstavce
+env.filters['paras'] = lambda t: ''.join(f'<p>{x.strip()}</p>' for x in str(t or '').split('\n') if x.strip())
+# česká typografie: jednopísmenné předložky a spojky nenechávat na konci řádku (jen v textu, ne v tagách/skriptech)
+_NB = re.compile(r'(?<![\w&;])([vszkouiaVSZKOUIA]) (?=\S)')
+def nbsp(html):
+    parts = re.split(r'(<script.*?</script>|<style.*?</style>|<svg.*?</svg>|<[^>]+>)', html, flags=re.S)
+    return ''.join(x if i % 2 else _NB.sub(r'\1&nbsp;', x) for i, x in enumerate(parts))
 for page in sorted((SRC / 'pages').glob('*.html')):
     meta = json.loads(re.match(r'\{#\s*(\{.*?\})\s*#\}', page.read_text(), re.S).group(1))
     depth = meta['out'].count('/')
@@ -42,7 +49,7 @@ for page in sorted((SRC / 'pages').glob('*.html')):
         common, root='../' * depth, page_id=meta['id'], page_title=meta['title'], page_desc=meta['desc'])
     out = OUT / meta['out']
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html)
+    out.write_text(nbsp(html))
     print('✓', meta['out'])
 
 # seznam obrázků pro výběr v administraci + verze pro hlídání zveřejnění

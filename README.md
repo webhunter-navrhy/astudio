@@ -1,4 +1,4 @@
-# A Studio — web
+# A-Studio — web
 
 Boutique studio Barre & Pilates, Odolena Voda. Statický web generovaný z dat.
 
@@ -21,5 +21,6 @@ Boutique studio Barre & Pilates, Odolena Voda. Statický web generovaný z dat.
 - `booking_embed` — URL widgetu; když je vyplněná, na stránce Rozvrh se vloží přímo do webu (iframe).
 
 ## Podklady
-- Logo převedené do vektoru z dodaného PNG (`brand/`), stíny listů z vizualizace výlohy.
+- Logo převedené do vektoru z dodaného PNG (`brand/`), stíny listů z vizualizace výlohy; v navigaci a patičce ve žlutém kolečku (jako profilovka na IG).
+- Fotka polepu dveří od klientky (29. 9. 2026): `assets/img/polep-dvere.jpg|webp`.
 - Fotky lekcí: Unsplash (zdroje v `assets/img/credits.json`) — nahradit profesionálními fotkami studia.

@@ -1,8 +1,8 @@
-{# {"out": "rozvrh/index.html", "id": "rozvrh", "title": "Rozvrh a rezervace — A Studio Odolena Voda", "desc": "Týdenní rozvrh lekcí Barre a Pilates. Rezervujte si místo online během minuty."} #}
+{# {"out": "rozvrh/index.html", "id": "rozvrh", "title": "Rozvrh a rezervace — A-Studio Odolena Voda", "desc": "Týdenní rozvrh lekcí Barre a Pilates. Rezervujte si místo online během minuty."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero, schedule_table with context %}
 {% block content %}
-{{ page_hero('Rozvrh / Rezervace', 'Rezervujte<br><em>si své místo</em>', 'Vyberte den a lekci. Rezervace i zrušení zvládnete z telefonu — zrušit můžete zdarma nejpozději 12 hodin předem.') }}
+{{ page_hero('Rozvrh / Rezervace', 'Rezervujte<br><em>si své místo</em>', 'Vyberte den a lekci. Rezervace i zrušení zvládnete z telefonu — zrušit můžete bezplatně nejpozději 6&nbsp;hodin před začátkem lekce.') }}
 
 <section class="sec sec--tight">
   <div class="wrap">
@@ -21,7 +21,7 @@
     <div class="head head--single"><p class="kicker reveal">Online rezervace</p><h2 class="h2 reveal">Volná místa<br>a rezervace</h2></div>
     <div class="booking reveal">
       {% if site.booking_embed %}
-        <iframe src="{{ site.booking_embed }}" title="Rezervační systém A Studia" loading="lazy"></iframe>
+        <iframe src="{{ site.booking_embed }}" title="Rezervační systém A-Studia" loading="lazy"></iframe>
       {% else %}
         <div class="booking-ph">
           <svg class="booking-mark"><use href="#logo-mark"/></svg>
@@ -32,7 +32,7 @@
       {% endif %}
     </div>
     <div class="book-help reveal">
-      <p><b>Potřebujete poradit?</b> Napište nám na <a href="mailto:{{ site.email }}">{{ site.email }}</a> nebo do zpráv na <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">Instagramu</a>.</p>
+      <p><b>Potřebujete poradit?</b> {% if site.email %}Napište nám na <a href="mailto:{{ site.email }}">{{ site.email }}</a> nebo do zpráv na{% else %}Zavolejte na <a href="tel:{{ site.phone|replace(' ','') }}">{{ site.phone }}</a> nebo napište do zpráv na{% endif %} <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">Instagramu</a>.</p>
       <a href="{{ root }}prvni-navsteva/" class="link">Jsem tu poprvé <svg><use href="#i-arr"/></svg></a>
     </div>
   </div>

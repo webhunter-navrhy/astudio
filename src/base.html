@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400..500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ root }}assets/style.css?v={{ v.css }}">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ExerciseGym","name":"A Studio","description":"Boutique studio Barre a Pilates v Odolené Vodě.","address":{"@type":"PostalAddress","addressLocality":"Odolena Voda","addressCountry":"CZ"},"email":"{{ site.email }}","telephone":"{{ site.phone|replace(' ','') }}","sameAs":["https://www.instagram.com/{{ site.instagram }}/"]}
+{"@context":"https://schema.org","@type":"ExerciseGym","name":"A-Studio","description":"Boutique studio Barre a Pilates v Odolené Vodě.","address":{"@type":"PostalAddress","streetAddress":"{{ site.address }}","postalCode":"{{ site.zip }}","addressLocality":"{{ site.city }}","addressCountry":"CZ"},{% if site.email %}"email":"{{ site.email }}",{% endif %}"telephone":"{{ site.phone|replace(' ','') }}","sameAs":["https://www.instagram.com/{{ site.instagram }}/"]}
 </script>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -35,7 +35,7 @@
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="{{ root }}" class="nav-logo" aria-label="A Studio — úvod"><svg><use href="#logo-a-studio"/></svg></a>
+    <a href="{{ root }}" class="nav-logo logo-badge" aria-label="A-Studio — úvod"><svg><use href="#logo-a-studio"/></svg></a>
     <nav class="nav-menu" id="menu" aria-label="Hlavní navigace">
       {% for id, href, label in nav %}<a href="{{ root }}{{ href }}"{% if id == page_id %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}
       <a href="{{ root }}rozvrh/" class="btn btn-sm nav-cta">Rezervovat lekci</a>
@@ -55,7 +55,7 @@
 <footer class="footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <svg class="footer-logo"><use href="#logo-full"/></svg>
+      <span class="footer-logo logo-badge"><svg role="img" aria-label="A-Studio"><use href="#logo-a-studio"/></svg></span>
       <p class="footer-claim">Místo, kde se pohyb stává součástí vašeho života.</p>
     </div>
     <div>
@@ -65,9 +65,9 @@
     <div>
       <h4>Kontakt</h4>
       <ul>
-        <li>{{ site.city }}</li>
+        <li>{{ site.address }}<br>{{ site.zip }} {{ site.city }}</li>
         <li><a href="tel:{{ site.phone|replace(' ','') }}">{{ site.phone }}</a></li>
-        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        {% if site.email %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
         <li><a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a></li>
       </ul>
     </div>
@@ -76,12 +76,12 @@
       <ul><li><a href="{{ root }}prvni-navsteva/">První návštěva</a></li><li><a href="{{ root }}obchodni-podminky/">Obchodní podmínky</a></li><li><a href="{{ root }}ochrana-osobnich-udaju/">Ochrana osobních údajů</a></li></ul>
     </div>
   </div>
-  <div class="wrap footer-bottom"><span>© 2026 A Studio Odolena Voda</span><span>Strong · Balanced · Happier you</span></div>
+  <div class="wrap footer-bottom"><span>© 2026 A-Studio Odolena Voda</span><span>Strong · Balanced · Happier you</span></div>
 </footer>
 
 <div class="mbar" id="mbar">
   <a href="{{ root }}rozvrh/" class="mbar-book"><svg><use href="#i-cal"/></svg>Rezervovat lekci</a>
-  <a href="https://www.instagram.com/{{ site.instagram }}/" class="mbar-ig" target="_blank" rel="noopener" aria-label="Instagram A Studia"><svg><use href="#i-ig"/></svg></a>
+  <a href="https://www.instagram.com/{{ site.instagram }}/" class="mbar-ig" target="_blank" rel="noopener" aria-label="Instagram A-Studia"><svg><use href="#i-ig"/></svg></a>
 </div>
 
 <script src="{{ root }}assets/main.js?v={{ v.js }}" defer></script>

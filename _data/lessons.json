@@ -1,64 +1,44 @@
 {
   "lessons": [
     {
-      "id": "barre-basic",
+      "id": "barre",
       "group": "Barre",
-      "name": "Barre Basic",
-      "length": "50 min",
-      "level": 1,
-      "for": "Pro začátečnice i návrat po pauze",
-      "text": "Základy barre techniky u tyče i na podložce. Naučíte se správné postavení těla, práci středu a drobné izometrické pohyby, které posilují do hloubky.",
-      "image": "barre-spicky.jpg"
-    },
-    {
-      "id": "barre-sculpt",
-      "group": "Barre",
-      "name": "Barre Sculpt",
-      "length": "50 min",
+      "name": "Barre",
+      "length": "55 min",
       "level": 2,
-      "for": "Pro pokročilejší",
-      "text": "Dynamičtější lekce s lehkými činkami, gumou a míčkem. Tvaruje nohy, hýždě a paže a zlepšuje držení těla — elegance baletu, síla fitness.",
+      "for": "Trénink u baletní tyče",
+      "text": "Barre je trénink u baletní tyče, ale balet u nás nečekejte. Na našich lekcích se potká síla, dynamika, precizní pohyb a hodně opakování. Intenzita je každé klientce přizpůsobená.\nPracujeme s vlastní vahou i se závažím, činkami, gumami a dalšími pomůckami. Zaměřujeme se na celé tělo. Pohyby jsou kontrolované bez zbytečných skoků.\nA PROTOŽE JSME A-STUDIO, hudba není jen kulisa.",
       "image": "barre-lekce.jpg"
     },
     {
-      "id": "barre-burn",
+      "id": "barre-strength",
       "group": "Barre",
-      "name": "Barre Burn",
-      "length": "45 min",
+      "name": "Barre Strength",
+      "length": "55 min",
       "level": 3,
-      "for": "Když chcete vydat energii",
-      "text": "Intenzivní barre v rychlejším tempu s cardio vstupy. Hudba, pot a úsměv na konci lekce.",
+      "for": "Silovější verze našeho Barre",
+      "text": "Barre Strength je silovější verze našeho Barre. Je určeno pro ženy, které se nebojí vzít do ruky něco těžkého. Cvičíme u tyče i na podložce a používáme těžší činky. Jedná se o velmi intenzivní trénink až HIIT trénink.\nA POŘÁD JE TO BARRE tak, jak ho máme rády – bez skákání, s hudbou nahlas a energií, která Vás strhne.",
       "image": "barre-nohy.jpg"
     },
     {
-      "id": "pilates-mat",
+      "id": "pilates-rehab",
       "group": "Pilates",
-      "name": "Pilates Mat",
+      "name": "Pilates Rehab",
       "length": "55 min",
       "level": 1,
-      "for": "Pro všechny úrovně",
-      "text": "Klasický pilates na podložce. Silný střed těla, zdravá záda, lepší dech a kontrola nad každým pohybem.",
+      "for": "Vhodná i pro začátečnice",
+      "text": "Klidnější lekce Pilates zaměřená na zdravý a kvalitní pohyb. Bez spěchu a bez honby za počtem opakování.\nPracujeme na správném držení těla, stabilitě, mobilitě a aktivaci hlubokého stabilizačního systému. Učíme se tělo nejen posilovat, ale hlavně správně používat.\nLekce je vhodná i pro začátečnice a pro ženy, které potřebují individuálnější přístup nebo mají pohybové omezení.\nMéně tempa. Více kontroly a pozornosti k vlastnímu tělu.",
       "image": "pilates-mat.jpg"
     },
     {
-      "id": "pilates-props",
+      "id": "pilates-power",
       "group": "Pilates",
-      "name": "Pilates s pomůckami",
+      "name": "Pilates Power",
       "length": "55 min",
       "level": 2,
-      "for": "Pro mírně pokročilé",
-      "text": "Pilates s overballem, kruhem a gumou. Pomůcky přidají odpor i podporu a posunou vás o kus dál.",
+      "for": "Pilates, ve kterém si dáme trochu víc do těla",
+      "text": "Pilates, ve kterém si dáme trochu víc do těla. Vychází z principů klasického Pilates, ale přidáváme větší intenzitu, svižnější tempo a náročnější varianty cviků.\nČeká Vás práce s vlastní vahou i pomůckami, důraz na střed těla, sílu, stabilitu a kontrolu pohybu. Pořád dbáme na správnou techniku – jen Vás necháme o kousek déle vydržet, o kousek víc zabrat.\nPilates pro dny, kdy chcete cítit, že jste opravdu cvičily.",
       "image": "pilates-mic.jpg"
-    },
-    {
-      "id": "pilates-flow",
-      "group": "Pilates",
-      "name": "Pilates Flow & Stretch",
-      "length": "55 min",
-      "level": 1,
-      "for": "Na zklidnění a regeneraci",
-      "text": "Plynulá lekce, ve které se pilates prolíná s protažením. Ideální na konec dne nebo jako doplněk k barre.",
-      "image": "protazeni-okno.jpg"
     },
     {
       "id": "privat",

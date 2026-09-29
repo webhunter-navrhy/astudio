@@ -1,45 +1,38 @@
 {
-  "note": "Ceny jsou orientační a budou upřesněny před otevřením studia.",
+  "note": "",
   "single": [
     {
-      "name": "První lekce",
-      "price": "199 Kč",
-      "note": "Zvýhodněná první návštěva"
+      "name": "Barre",
+      "price": "260 Kč",
+      "note": "Jednorázový vstup"
     },
     {
-      "name": "Jednorázový vstup",
-      "price": "290 Kč",
-      "note": "Barre i Pilates"
+      "name": "Pilates",
+      "price": "220 Kč",
+      "note": "Jednorázový vstup"
     },
     {
-      "name": "Soukromá lekce",
-      "price": "990 Kč",
-      "note": "Pro dvě 1 290 Kč"
+      "name": "Individuální lekce",
+      "price": "600 Kč",
+      "note": "Jen vy a lektorka"
     }
   ],
   "passes": [
     {
-      "name": "5 vstupů",
-      "price": "1 350 Kč",
-      "per": "270 Kč / lekce",
-      "valid": "Platnost 2 měsíce",
-      "featured": false
-    },
-    {
-      "name": "10 vstupů",
-      "price": "2 490 Kč",
-      "per": "249 Kč / lekce",
-      "valid": "Platnost 4 měsíce",
+      "name": "10 vstupů Barre",
+      "price": "240 Kč",
+      "per": "za vstup",
+      "valid": "",
       "featured": true
     },
     {
-      "name": "Měsíc bez limitu",
-      "price": "2 190 Kč",
-      "per": "Neomezeně lekcí",
-      "valid": "30 dní od první lekce",
+      "name": "10 vstupů Pilates",
+      "price": "200 Kč",
+      "per": "za vstup",
+      "valid": "",
       "featured": false
     }
   ],
-  "multisport": "Na lekce můžete přijít i s kartou MultiSport. Podmínky a případný doplatek upřesníme.",
+  "multisport": "Jednáme s MultiSportem – brzy.",
   "gift": "Dárkový poukaz na libovolnou částku nebo permanentku — hezký dárek pro kamarádku, mámu i sebe."
 }

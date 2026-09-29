@@ -1,10 +1,10 @@
-{# {"out": "ochrana-osobnich-udaju/index.html", "id": "gdpr", "title": "Ochrana osobních údajů — A Studio", "desc": "Informace o zpracování osobních údajů (GDPR) v A Studiu."} #}
+{# {"out": "ochrana-osobnich-udaju/index.html", "id": "gdpr", "title": "Ochrana osobních údajů — A-Studio", "desc": "Informace o zpracování osobních údajů (GDPR) v A-Studiu."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero with context %}
 {% block content %}
 {{ page_hero('Právní informace', 'Ochrana<br><em>osobních údajů</em>', 'Vzor k doplnění — finální znění doporučujeme nechat zkontrolovat.') }}
 <section class="sec"><div class="wrap legal">
-  <h2>Správce údajů</h2><p>Správcem osobních údajů je [jméno / obchodní firma], IČO [doplnit], e-mail {{ site.email }}.</p>
+  <h2>Správce údajů</h2><p>Správcem osobních údajů je [jméno / obchodní firma], IČO [doplnit]{% if site.email %}, e-mail {{ site.email }}{% endif %}, telefon {{ site.phone }}.</p>
   <h2>Jaké údaje zpracováváme</h2><p>Jméno, příjmení, e-mail, telefon, historii rezervací a plateb a údaje, které nám sama sdělíte (např. zdravotní omezení pro potřeby lekce).</p>
   <h2>Proč je zpracováváme</h2><p>Pro správu rezervací a permanentek, komunikaci ohledně lekcí, plnění zákonných povinností (účetnictví) a — pouze s vaším souhlasem — pro zasílání novinek.</p>
   <h2>Komu je předáváme</h2><p>Provozovateli rezervačního systému, poskytovatelům platebních služeb a účetní. Údaje neprodáváme třetím stranám.</p>

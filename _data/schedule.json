@@ -1,12 +1,112 @@
 {
   "note": "Ukázkový rozvrh — aktuální lekce a volná místa uvidíte v rezervačním systému.",
   "days": [
-    {"day": "Pondělí", "short": "Po", "classes": [{"time": "18:00", "lesson": "Pilates Mat", "len": "55 min"}, {"time": "19:10", "lesson": "Barre Basic", "len": "50 min"}]},
-    {"day": "Úterý", "short": "Út", "classes": [{"time": "08:30", "lesson": "Barre Sculpt", "len": "50 min"}, {"time": "18:00", "lesson": "Pilates s pomůckami", "len": "55 min"}]},
-    {"day": "Středa", "short": "St", "classes": [{"time": "17:00", "lesson": "Barre Basic", "len": "50 min"}, {"time": "18:00", "lesson": "Barre Sculpt", "len": "50 min"}, {"time": "19:00", "lesson": "Barre Burn", "len": "45 min"}]},
-    {"day": "Čtvrtek", "short": "Čt", "classes": [{"time": "09:00", "lesson": "Pilates Flow & Stretch", "len": "55 min"}, {"time": "18:30", "lesson": "Pilates Mat", "len": "55 min"}]},
-    {"day": "Pátek", "short": "Pá", "classes": [{"time": "18:00", "lesson": "Barre Sculpt", "len": "50 min"}, {"time": "19:00", "lesson": "Barre Basic", "len": "50 min"}]},
-    {"day": "Sobota", "short": "So", "classes": [{"time": "09:00", "lesson": "Barre Burn", "len": "45 min"}]},
-    {"day": "Neděle", "short": "Ne", "classes": [{"time": "19:00", "lesson": "Pilates Flow & Stretch", "len": "55 min"}]}
+    {
+      "day": "Pondělí",
+      "short": "Po",
+      "classes": [
+        {
+          "time": "18:00",
+          "lesson": "Pilates Rehab",
+          "len": "55 min"
+        },
+        {
+          "time": "19:10",
+          "lesson": "Barre",
+          "len": "55 min"
+        }
+      ]
+    },
+    {
+      "day": "Úterý",
+      "short": "Út",
+      "classes": [
+        {
+          "time": "08:30",
+          "lesson": "Barre",
+          "len": "55 min"
+        },
+        {
+          "time": "18:00",
+          "lesson": "Pilates Power",
+          "len": "55 min"
+        }
+      ]
+    },
+    {
+      "day": "Středa",
+      "short": "St",
+      "classes": [
+        {
+          "time": "17:00",
+          "lesson": "Barre",
+          "len": "55 min"
+        },
+        {
+          "time": "18:00",
+          "lesson": "Barre",
+          "len": "55 min"
+        },
+        {
+          "time": "19:00",
+          "lesson": "Barre Strength",
+          "len": "55 min"
+        }
+      ]
+    },
+    {
+      "day": "Čtvrtek",
+      "short": "Čt",
+      "classes": [
+        {
+          "time": "09:00",
+          "lesson": "Pilates Rehab",
+          "len": "55 min"
+        },
+        {
+          "time": "18:30",
+          "lesson": "Pilates Rehab",
+          "len": "55 min"
+        }
+      ]
+    },
+    {
+      "day": "Pátek",
+      "short": "Pá",
+      "classes": [
+        {
+          "time": "18:00",
+          "lesson": "Barre",
+          "len": "55 min"
+        },
+        {
+          "time": "19:00",
+          "lesson": "Barre",
+          "len": "55 min"
+        }
+      ]
+    },
+    {
+      "day": "Sobota",
+      "short": "So",
+      "classes": [
+        {
+          "time": "09:00",
+          "lesson": "Barre Strength",
+          "len": "55 min"
+        }
+      ]
+    },
+    {
+      "day": "Neděle",
+      "short": "Ne",
+      "classes": [
+        {
+          "time": "19:00",
+          "lesson": "Pilates Rehab",
+          "len": "55 min"
+        }
+      ]
+    }
   ]
 }

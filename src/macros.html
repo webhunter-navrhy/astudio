@@ -40,7 +40,7 @@
 
 {% macro faq_list(items) %}
 <div class="faq">
-  {% for f in items %}<details><summary>{{ f.q }}<svg><use href="#i-plus"/></svg></summary><div class="faq-a">{{ f.a }}</div></details>{% endfor %}
+  {% for f in items %}<details><summary>{{ f.q }}<svg><use href="#i-plus"/></svg></summary><div class="faq-a">{{ f.a|paras }}</div></details>{% endfor %}
 </div>
 {% endmacro %}
 
@@ -50,7 +50,7 @@
   <div class="wrap cta-in">
     <svg class="cta-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
     <h2 class="h2">{{ title|safe }}</h2>
-    <p>{{ text }}</p>
+    {% if text %}<p>{{ text }}</p>{% endif %}
     <a href="{{ root }}{{ href }}" class="btn btn--dark">{{ btn }} <svg><use href="#i-arr"/></svg></a>
   </div>
 </section>
