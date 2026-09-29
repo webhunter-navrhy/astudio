@@ -15,7 +15,7 @@
         <p class="pass-price">{{ p.price }}</p>
         {% if p.per %}<p class="pass-per">{{ p.per }}</p>{% endif %}
         <p class="pass-valid">{{ p.valid }}</p>
-        <a href="{{ site.booking_url }}" class="btn{% if not p.featured %} btn--ghost{% else %} btn--dark{% endif %}" target="_blank" rel="noopener">Koupit</a>
+        <a {% if site.booking_url %}href="{{ site.booking_url }}" target="_blank" rel="noopener"{% else %}href="{{ root }}kontakt/"{% endif %} class="btn{% if not p.featured %} btn--ghost{% else %} btn--dark{% endif %}">Koupit</a>
       </div>
       {% endfor %}
     </div>

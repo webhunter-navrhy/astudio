@@ -27,7 +27,7 @@
           <svg class="booking-mark"><use href="#logo-mark"/></svg>
           <p class="kicker">Místo pro rezervační systém</p>
           <p>Sem se vloží widget vašeho rezervačního systému — rozvrh s volnými místy, přihlášení klientky a platba permanentkou. Na telefonu se otevře přímo aplikace nebo stránka rezervací.</p>
-          <a href="{{ site.booking_url }}" class="btn" target="_blank" rel="noopener">Otevřít rezervace <svg><use href="#i-arr"/></svg></a>
+          <a {% if site.booking_url %}href="{{ site.booking_url }}" target="_blank" rel="noopener" class="btn" {% else %}href="{{ root }}kontakt/" class="btn"{% endif %}>Otevřít rezervace <svg><use href="#i-arr"/></svg></a>
         </div>
       {% endif %}
     </div>

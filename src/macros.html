@@ -28,7 +28,7 @@
         <li class="sched-row">
           <time>{{ c.time }}</time>
           <div><b>{{ c.lesson }}</b><span>{{ c.len }}</span></div>
-          <a class="btn btn-xs" href="{{ site.booking_url }}" target="_blank" rel="noopener">Rezervovat</a>
+          <a class="btn btn-xs" {% if site.booking_url %}href="{{ site.booking_url }}" target="_blank" rel="noopener"{% else %}href="{{ root }}kontakt/"{% endif %}>Rezervovat</a>
         </li>
         {% endfor %}
       </ul>

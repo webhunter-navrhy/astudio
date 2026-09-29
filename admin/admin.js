@@ -139,7 +139,6 @@ function validate() {
     if (ids.has(l.id)) l.id = l.id + '-' + uid();
     ids.add(l.id);
   }
-  if (!S.D.site.booking_url?.trim()) return 'Vyplňte odkaz na rezervační systém (Kontakty a rezervace).';
   return null;
 }
 async function saveAll() {
@@ -313,7 +312,7 @@ function vSite() {
   const d = S.D.site;
   view('Kontakty a rezervace', 'Údaje z patičky, stránky Kontakt a tlačítek „Rezervovat lekci“.',
     card('Rezervace', 'Kam vedou všechna tlačítka „Rezervovat“.',
-      fText(d, 'booking_url', 'Odkaz na rezervační systém', { type: 'url', ph: 'https://…' }),
+      fText(d, 'booking_url', 'Odkaz na rezervační systém', { type: 'url', ph: 'https://…', hint: 'Dokud je prázdné, tlačítka „Rezervovat“ vedou na stránku Kontakt.' }),
       fText(d, 'booking_embed', 'Odkaz pro vložení rozvrhu do webu (nepovinné)', { type: 'url', ph: 'https://…', hint: 'Pokud váš rezervační systém nabízí „widget“ nebo „embed“, vložte sem jeho adresu — rozvrh s volnými místy se zobrazí přímo na stránce Rozvrh.' })),
     card('Kontakt', null,
       row2(fText(d, 'phone', 'Telefon', { type: 'tel' }), fText(d, 'email', 'E-mail', { type: 'email' })),
