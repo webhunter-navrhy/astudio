@@ -23,7 +23,7 @@ def svg_parts(name):
     return {'vb': re.search(r'viewBox="([^"]+)"', s).group(1), 'body': s[s.index('<g'):s.rindex('</svg>')]}
 
 h = lambda p: hashlib.md5((OUT / p).read_bytes()).hexdigest()[:8]
-data = {k: json.loads((CONTENT / f'{k}.json').read_text()) for k in ('site', 'lessons', 'schedule', 'pricing', 'team', 'faq', 'vop')}
+data = {k: json.loads((CONTENT / f'{k}.json').read_text()) for k in ('site', 'lessons', 'schedule', 'pricing', 'team', 'faq', 'vop', 'gdpr')}
 common = dict(
     data,
     v={'css': h('assets/style.css'), 'js': h('assets/main.js'), 'fav': h('assets/favicon.svg')},

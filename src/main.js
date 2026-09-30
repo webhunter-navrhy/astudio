@@ -62,4 +62,54 @@
     const items = [...f.querySelectorAll('details')];
     items.forEach(d => d.addEventListener('toggle', () => { if (d.open) items.forEach(o => { if (o !== d) o.open = false; }); }));
   });
+
+  /* cookies — Google Analytics se načte až po souhlasu (a jen pokud je v site.json vyplněné ga_id) */
+  const KEY = 'astudio-cookies';
+  const box = document.getElementById('cookies');
+  const gaId = document.body.dataset.ga;
+  const read = () => { try { return JSON.parse(localStorage.getItem(KEY)); } catch (e) { return null; } };
+  const loadGA = () => {
+    if (!gaId || window.gtag) return;
+    const s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', gaId, { anonymize_ip: true });
+  };
+  const clearGA = () => {
+    document.cookie.split(';').map(c => c.trim().split('=')[0]).filter(n => /^_ga/.test(n)).forEach(n => {
+      const host = location.hostname.split('.').slice(-2).join('.');
+      [location.hostname, '.' + host].forEach(d => { document.cookie = n + '=; Max-Age=0; path=/; domain=' + d; });
+      document.cookie = n + '=; Max-Age=0; path=/';
+    });
+  };
+  const save = analytics => {
+    const had = (read() || {}).analytics;
+    localStorage.setItem(KEY, JSON.stringify({ analytics, ts: new Date().toISOString() }));
+    box.hidden = true;
+    if (analytics) loadGA();
+    else if (had) { clearGA(); location.reload(); }
+  };
+  const open = settings => {
+    const c = read();
+    document.getElementById('cookies-analytics').checked = !!(c && c.analytics);
+    document.getElementById('cookies-set').hidden = !settings;
+    document.getElementById('cookies-save').hidden = !settings;
+    document.getElementById('cookies-toggle').hidden = settings;
+    box.hidden = false;
+  };
+  if (box) {
+    const c = read();
+    if (!c) open(false); else if (c.analytics) loadGA();
+    box.addEventListener('click', e => {
+      const a = e.target.closest('[data-cookies]'); if (!a) return;
+      const v = a.dataset.cookies;
+      if (v === 'all') save(true);
+      else if (v === 'none') save(false);
+      else if (v === 'settings') open(true);
+      else if (v === 'save') save(document.getElementById('cookies-analytics').checked);
+    });
+    document.querySelectorAll('[data-cookies-open]').forEach(b => b.addEventListener('click', () => open(true)));
+  }
 })();

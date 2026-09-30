@@ -20,7 +20,7 @@
 </script>
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="page-{{ page_id }}">
+<body class="page-{{ page_id }}" data-ga="{{ site.ga_id }}">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-arr" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -73,11 +73,28 @@
     </div>
     <div>
       <h4>Informace</h4>
-      <ul><li><a href="{{ root }}prvni-navsteva/">První návštěva</a></li><li><a href="{{ root }}obchodni-podminky/">Obchodní podmínky</a></li><li><a href="{{ root }}ochrana-osobnich-udaju/">Ochrana osobních údajů</a></li></ul>
+      <ul><li><a href="{{ root }}prvni-navsteva/">První návštěva</a></li><li><a href="{{ root }}obchodni-podminky/">Obchodní podmínky</a></li><li><a href="{{ root }}ochrana-osobnich-udaju/">Ochrana osobních údajů</a></li><li><button type="button" class="link-btn" data-cookies-open>Nastavení cookies</button></li></ul>
     </div>
   </div>
   <div class="wrap footer-bottom"><span>© 2026 A-Studio Odolena Voda</span><span>Strong · Balanced · Happier you</span></div>
 </footer>
+
+<div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Nastavení cookies" hidden>
+  <div class="cookies-main">
+    <p class="cookies-title">Cookies</p>
+    <p>Pro správný chod webu používáme nezbytné cookies. S Vaším souhlasem použijeme i analytické cookies (Google Analytics), které nám pomáhají web zlepšovat. Souhlas můžete kdykoli změnit v patičce webu. <a href="{{ root }}ochrana-osobnich-udaju/">Více informací</a></p>
+    <div class="cookies-set" id="cookies-set" hidden>
+      <label class="cookies-opt"><input type="checkbox" checked disabled> <span><strong>Nezbytné</strong> — zajišťují základní funkce webu, nelze je vypnout.</span></label>
+      <label class="cookies-opt"><input type="checkbox" id="cookies-analytics"> <span><strong>Analytické</strong> — anonymní statistiky návštěvnosti (Google Analytics).</span></label>
+    </div>
+  </div>
+  <div class="cookies-btns">
+    <button type="button" class="btn btn-sm" data-cookies="all">Přijmout vše</button>
+    <button type="button" class="btn btn-sm btn--ghost" data-cookies="none">Odmítnout</button>
+    <button type="button" class="btn btn-sm btn--ghost" data-cookies="settings" id="cookies-toggle">Nastavení</button>
+    <button type="button" class="btn btn-sm btn--ghost" data-cookies="save" id="cookies-save" hidden>Uložit výběr</button>
+  </div>
+</div>
 
 <div class="mbar" id="mbar">
   <a href="{{ root }}rozvrh/" class="mbar-book"><svg><use href="#i-cal"/></svg>Rezervovat lekci</a>

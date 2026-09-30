@@ -1,15 +1,17 @@
-{# {"out": "ochrana-osobnich-udaju/index.html", "id": "gdpr", "title": "Ochrana osobních údajů — A-Studio", "desc": "Informace o zpracování osobních údajů (GDPR) v A-Studiu."} #}
+{# {"out": "ochrana-osobnich-udaju/index.html", "id": "gdpr", "title": "Ochrana osobních údajů — A-Studio", "desc": "Zásady ochrany osobních údajů A-Studia: jaké údaje zpracováváme, proč, jak dlouho a jaká máte práva."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero with context %}
 {% block content %}
-{{ page_hero('Právní informace', 'Ochrana<br><em>osobních údajů</em>', 'Vzor k doplnění — finální znění doporučujeme nechat zkontrolovat.') }}
+{{ page_hero('Právní informace', 'Ochrana<br><em>osobních údajů</em>', 'Platné a účinné od ' ~ gdpr.valid_from ~ '.') }}
 <section class="sec"><div class="wrap legal">
-  <h2>Správce údajů</h2><p>Správcem osobních údajů je [jméno / obchodní firma], IČO [doplnit]{% if site.email %}, e-mail {{ site.email }}{% endif %}, telefon {{ site.phone }}.</p>
-  <h2>Jaké údaje zpracováváme</h2><p>Jméno, příjmení, e-mail, telefon, historii rezervací a plateb a údaje, které nám sama sdělíte (např. zdravotní omezení pro potřeby lekce).</p>
-  <h2>Proč je zpracováváme</h2><p>Pro správu rezervací a permanentek, komunikaci ohledně lekcí, plnění zákonných povinností (účetnictví) a — pouze s vaším souhlasem — pro zasílání novinek.</p>
-  <h2>Komu je předáváme</h2><p>Provozovateli rezervačního systému, poskytovatelům platebních služeb a účetní. Údaje neprodáváme třetím stranám.</p>
-  <h2>Jak dlouho je uchováváme</h2><p>Po dobu trvání vztahu a dále po dobu stanovenou právními předpisy, nejdéle však [doplnit].</p>
-  <h2>Vaše práva</h2><p>Máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Stížnost můžete podat u Úřadu pro ochranu osobních údajů (uoou.cz).</p>
-  <h2>Cookies</h2><p>Web používá pouze technicky nezbytné cookies. Vložený rezervační systém a mapa mohou používat vlastní cookies podle podmínek jejich provozovatelů.</p>
+  {% for s in gdpr.sections %}
+  <h2>{{ s.title }}</h2>
+  {% for b in s.blocks %}
+    {% if b.list %}<ul>{% for i in b.list %}<li>{{ i|mailto }}</li>{% endfor %}</ul>
+    {% elif b.lines %}<p class="legal-lines">{% for l in b.lines %}{{ l|mailto }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+    {% elif b.link %}<p><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.link }}</a></p>
+    {% else %}<p>{{ b.p|mailto }}</p>{% endif %}
+  {% endfor %}
+  {% endfor %}
 </div></section>
 {% endblock %}
