@@ -101,7 +101,9 @@ p { text-wrap: pretty; }
 .leaves--dark { opacity: 0.35; }
 
 /* ═══ NAV ═══ */
-.nav { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--cream) 94%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: box-shadow 0.3s; }
+.nav { position: sticky; top: 0; z-index: 100; transition: box-shadow 0.3s; }
+/* rozmazané pozadí na pseudo-elementu: backdrop-filter přímo na .nav by z něj udělal containing block pro fixed menu (menu by mělo jen výšku lišty) */
+.nav::before { content: ''; position: absolute; inset: 0; z-index: -1; background: color-mix(in srgb, var(--cream) 94%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 .nav.scrolled { box-shadow: 0 1px 0 var(--line); }
 .nav-inner { width: var(--wrap); margin-inline: auto; height: 4.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 /* logo ve žlutém kolečku — stejně jako profilovka na Instagramu */
@@ -119,13 +121,13 @@ p { text-wrap: pretty; }
 /* mobilní menu */
 .nav-menu {
   position: fixed; inset: 0; z-index: 101;
-  display: flex; flex-direction: column; justify-content: center; gap: 0.2rem;
+  display: flex; flex-direction: column; justify-content: safe center; gap: 0.2rem;
   padding: 5.5rem 1.6rem 2rem; background: var(--cream);
   opacity: 0; visibility: hidden; transition: opacity 0.4s var(--ease), visibility 0s 0.4s;
   overflow-y: auto;
 }
 .nav-menu.open { opacity: 1; visibility: visible; transition: opacity 0.4s var(--ease); }
-.nav-menu > a:not(.btn) { font-family: var(--f-serif); font-size: 2.1rem; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.04em; }
+.nav-menu > a:not(.btn) { font-family: var(--f-serif); font-size: 1.55rem; line-height: 1.3; padding: 0.15rem 0; text-transform: uppercase; letter-spacing: 0.04em; }
 .nav-menu > a[aria-current="page"] { font-style: italic; text-transform: none; }
 .nav-menu .btn { margin-top: 1.4rem; align-self: flex-start; }
 .menu-foot { margin-top: 2rem; font-size: 0.85rem; color: var(--muted); }
