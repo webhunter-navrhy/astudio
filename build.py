@@ -23,7 +23,7 @@ def svg_parts(name):
     return {'vb': re.search(r'viewBox="([^"]+)"', s).group(1), 'body': s[s.index('<g'):s.rindex('</svg>')]}
 
 h = lambda p: hashlib.md5((OUT / p).read_bytes()).hexdigest()[:8]
-data = {k: json.loads((CONTENT / f'{k}.json').read_text()) for k in ('site', 'lessons', 'schedule', 'pricing', 'team', 'faq')}
+data = {k: json.loads((CONTENT / f'{k}.json').read_text()) for k in ('site', 'lessons', 'schedule', 'pricing', 'team', 'faq', 'vop')}
 common = dict(
     data,
     v={'css': h('assets/style.css'), 'js': h('assets/main.js'), 'fav': h('assets/favicon.svg')},
@@ -37,6 +37,8 @@ env = Environment(loader=FileSystemLoader([str(SRC), str(SRC / 'pages')]), autoe
 env.filters['img'] = lambda p: str(p) if str(p).startswith('img/') else 'assets/img/' + str(p).rsplit('/', 1)[-1]
 # víceřádkový text z administrace → odstavce
 env.filters['paras'] = lambda t: ''.join(f'<p>{x.strip()}</p>' for x in str(t or '').split('\n') if x.strip())
+# e-mailové adresy v textu → odkazy
+env.filters['mailto'] = lambda t: re.sub(r'([\w.+-]+@[\w-]+(?:\.[\w-]+)+)', r'<a href="mailto:\1">\1</a>', str(t or ''))
 # česká typografie: jednopísmenné předložky a spojky nenechávat na konci řádku (jen v textu, ne v tagách/skriptech)
 _NB = re.compile(r'(?<![\w&;])([vszkouiaVSZKOUIA]) (?=\S)')
 def nbsp(html):
