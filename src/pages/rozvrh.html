@@ -1,15 +1,15 @@
-{# {"out": "rozvrh/index.html", "id": "rozvrh", "title": "Rozvrh a rezervace — A-Studio Odolena Voda", "desc": "Týdenní rozvrh lekcí Barre a Pilates. Rezervujte si místo online během minuty."} #}
+{# {"out": "rozvrh/index.html", "id": "rozvrh", "title": "Rozvrh a rezervace – A-Studio Odolena Voda", "desc": "Týdenní rozvrh lekcí Barre a Pilates. Rezervujte si místo online během minuty."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero, schedule_table with context %}
 {% block content %}
-{{ page_hero('Rozvrh / Rezervace', 'Rezervujte<br><em>si své místo</em>', 'Vyberte den a lekci. Rezervace i zrušení zvládnete z telefonu — zrušit můžete bezplatně nejpozději 6&nbsp;hodin před začátkem lekce.') }}
+{{ page_hero('Rozvrh / Rezervace', 'Rezervujte<br><em>si své místo</em>', 'Vyberte den a lekci. Rezervace i zrušení zvládnete z telefonu – zrušit můžete bezplatně nejpozději 6&nbsp;hodin před začátkem lekce.') }}
 
 <section class="sec sec--tight">
   <div class="wrap">
     <div class="book-steps reveal-group">
       <div><b>1</b><span>Vyberte lekci</span></div>
       <div><b>2</b><span>Přihlaste se</span></div>
-      <div><b>3</b><span>Hotovo — těšíme se</span></div>
+      <div><b>3</b><span>Hotovo – těšíme se</span></div>
     </div>
     <div class="reveal">{{ schedule_table(schedule) }}</div>
     <p class="note reveal">{{ schedule.note }}</p>
@@ -26,7 +26,7 @@
         <div class="booking-ph">
           <svg class="booking-mark"><use href="#logo-mark"/></svg>
           <p class="kicker">Místo pro rezervační systém</p>
-          <p>Sem se vloží widget vašeho rezervačního systému — rozvrh s volnými místy, přihlášení klientky a platba permanentkou. Na telefonu se otevře přímo aplikace nebo stránka rezervací.</p>
+          <p>Sem se vloží widget Vašeho rezervačního systému – rozvrh s volnými místy, přihlášení klientky a platba permanentkou. Na telefonu se otevře přímo aplikace nebo stránka rezervací.</p>
           <a {% if site.booking_url %}href="{{ site.booking_url }}" target="_blank" rel="noopener" class="btn" {% else %}href="{{ root }}kontakt/" class="btn"{% endif %}>Otevřít rezervace <svg><use href="#i-arr"/></svg></a>
         </div>
       {% endif %}

@@ -1,4 +1,4 @@
-{# {"out": "kontakt/index.html", "id": "kontakt", "title": "Kontakt — A-Studio Odolena Voda", "desc": "Adresa, mapa, parkování, telefon a Instagram A-Studia v Odolené Vodě."} #}
+{# {"out": "kontakt/index.html", "id": "kontakt", "title": "Kontakt – A-Studio Odolena Voda", "desc": "Adresa, mapa, parkování, telefon a Instagram A-Studia v Odolené Vodě."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero with context %}
 {% block content %}
@@ -13,7 +13,7 @@
       <div><dt><svg><use href="#i-ig"/></svg>Instagram</dt><dd><a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a></dd></div>
     </dl>
     <div class="cmedia">
-      <div class="map arch-soft reveal"><iframe title="Mapa — Odolena Voda" src="https://maps.google.com/maps?q={{ (site.address ~ ', ' ~ site.zip ~ ' ' ~ site.city)|urlencode }}&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map arch-soft reveal"><iframe title="Mapa – Odolena Voda" src="https://maps.google.com/maps?q={{ (site.address ~ ', ' ~ site.zip ~ ' ' ~ site.city)|urlencode }}&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <figure class="cfront reveal"><picture><source srcset="{{ root }}assets/img/polep-dvere.webp" type="image/webp"><img src="{{ root }}assets/img/polep-dvere.jpg" alt="Vstup do A-Studia se žlutým polepem dveří a oken" width="1312" height="1199" loading="lazy"></picture></figure>
     </div>
   </div>

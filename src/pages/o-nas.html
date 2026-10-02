@@ -1,22 +1,22 @@
-{# {"out": "o-nas/index.html", "id": "onas", "title": "O A-Studiu — příběh studia a zakladatelky", "desc": "Příběh A-Studia v Odolené Vodě, představení zakladatelky, její zkušenosti a kvalifikace."} #}
+{# {"out": "o-nas/index.html", "id": "onas", "title": "O A-Studiu – příběh studia a zakladatelky", "desc": "Příběh A-Studia v Odolené Vodě, představení zakladatelky, její zkušenosti a kvalifikace."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero, cta_band with context %}
 {% block content %}
-{{ page_hero('O A-Studiu', 'Místo, kde<br><em>patříte</em>', 'Boutique studio pro ženy, které chtějí být silnější — v těle i v hlavě.', 'interier-oblouk.jpg') }}
+{{ page_hero('O A-Studiu', 'Místo, kam<br><em>patříte</em>', 'Boutique studio pro ženy, které chtějí být silnější – v těle i v hlavě.', 'interier-oblouk.jpg') }}
 
 <section class="sec">
   <div class="wrap story">
     <div class="story-copy">
       <p class="kicker reveal">O A-Studiu</p>
-      <h2 class="h2 reveal">Víc než<br><em>jen lekce</em></h2>
+      <h2 class="h2 reveal">Více než<br><em>jen lekce</em></h2>
       <p class="reveal">A-Studio jsme vytvořily pro Vás ženy. Místo, kde to voní, je útulno a kde jsme jen my ŽENY.</p>
       <p class="reveal">Bez hodnocení a bez pocitu, že musíte něco dokazovat. Chceme znát Vaše jméno, vědět, co Vaše tělo potřebuje a jaká máte omezení. Nechceme být studio, kam jen přijdete na lekci a zase odejdete.</p>
       <p class="reveal">Čeká Vás přátelská atmosféra, malé skupiny a osobní přístup.</p>
       <blockquote class="quote-sm reveal">Nejste číslo v rezervačním systému.<br><span class="caps">Jste naše klientka.</span></blockquote>
     </div>
     <div class="story-values reveal-group">
-      <div><h3>Tělo</h3><p>Silné, pohyblivé a zdravé — bez honby za dokonalostí.</p></div>
-      <div><h3>Mysl</h3><p>Hodina jen pro vás. Dech, soustředění, klid.</p></div>
+      <div><h3>Tělo</h3><p>Silné, pohyblivé a zdravé – bez honby za dokonalostí.</p></div>
+      <div><h3>Mysl</h3><p>Hodina jen pro Vás. Dech, soustředění, klid.</p></div>
       <div><h3>Rovnováha</h3><p>Disciplína, která přináší svobodu.</p></div>
       <div><h3>Komunita</h3><p>Ženy, které se navzájem podporují.</p></div>
     </div>
@@ -25,7 +25,7 @@
 
 <section class="sec sec--beige" id="o-mne">
   <div class="wrap founder">
-    <figure class="arch founder-img reveal"><img src="{{ root }}{{ team.founder.image|img }}" alt="Zakladatelka A-Studia" loading="lazy"><figcaption>Ilustrační foto — nahradíme vaším portrétem</figcaption></figure>
+    <figure class="arch founder-img reveal"><img src="{{ root }}{{ team.founder.image|img }}" alt="Zakladatelka A-Studia" loading="lazy"><figcaption>Ilustrační foto – nahradíme Vaším portrétem</figcaption></figure>
     <div>
       <p class="kicker reveal">O mně</p>
       <h2 class="h2 reveal">{{ team.founder.name }}</h2>
@@ -40,7 +40,7 @@
 
 <section class="storefront">
   <figure class="reveal"><picture><source srcset="{{ root }}assets/img/polep-dvere.webp" type="image/webp"><img src="{{ root }}assets/img/polep-dvere.jpg" alt="Vstup do A-Studia se žlutým polepem dveří a oken" width="1312" height="1199" loading="lazy"></picture></figure>
-  <div class="wrap storefront-copy reveal"><p class="kicker">Brzy otevíráme</p><p>Studio je ve výstavbě. Sledujte <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a> — ukážeme vám, jak vzniká.</p></div>
+  <div class="wrap storefront-copy reveal"><p class="kicker">Brzy otevíráme</p><p>Studio je ve výstavbě. Sledujte <a href="https://www.instagram.com/{{ site.instagram }}/" target="_blank" rel="noopener">@{{ site.instagram }}</a> – ukážeme Vám, jak vzniká.</p></div>
 </section>
 {{ cta_band('Přijďte se k nám<br><em>podívat</em>', 'Těšíme se na Vás.') }}
 {% endblock %}
