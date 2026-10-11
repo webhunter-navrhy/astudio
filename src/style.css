@@ -528,3 +528,4 @@ p { text-wrap: pretty; }
 .link-btn { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
 .link-btn:hover { opacity: 0.7; }
 @media (max-width: 640px) { .cookies { left: 0.6rem; right: 0.6rem; bottom: 0.6rem; padding: 1.1rem; } .cookies-btns .btn { flex: 1 1 auto; } }
+.booking-note { margin: 0 0 1.4rem; padding: 1rem 1.3rem; background: var(--yellow-2, #F7D77F); border-radius: 4px; color: #1a1a1a; }
