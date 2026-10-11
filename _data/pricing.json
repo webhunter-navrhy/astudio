@@ -39,42 +39,14 @@
   ],
   "passes": [
     {
-      "name": "10 vstupů Barre",
+      "name": "10 vstupů Barre a Fyzio Yoga",
       "price": "230 Kč",
       "per": "za vstup",
       "valid": "",
       "featured": true
     },
     {
-      "name": "10 vstupů Pilates",
-      "price": "200 Kč",
-      "per": "za vstup",
-      "valid": "",
-      "featured": false
-    },
-    {
-      "name": "10 vstupů Yoga",
-      "price": "200 Kč",
-      "per": "za vstup",
-      "valid": "",
-      "featured": false
-    },
-    {
-      "name": "10 vstupů Fyzio Yoga",
-      "price": "230 Kč",
-      "per": "za vstup",
-      "valid": "",
-      "featured": false
-    },
-    {
-      "name": "10 vstupů Mama Yoga",
-      "price": "200 Kč",
-      "per": "za vstup",
-      "valid": "",
-      "featured": false
-    },
-    {
-      "name": "10 vstupů Zdravá záda",
+      "name": "10 vstupů Flow Yoga, Mama Yoga, Pilates, Pilates Sculpt a Zdravá záda",
       "price": "200 Kč",
       "per": "za vstup",
       "valid": "",
