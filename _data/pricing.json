@@ -17,7 +17,7 @@
       "note": "Jednorázový vstup"
     },
     {
-      "name": "Yoga fyzio",
+      "name": "Fyzio Yoga",
       "price": "260 Kč",
       "note": "Jednorázový vstup"
     },
@@ -60,7 +60,7 @@
       "featured": false
     },
     {
-      "name": "10 vstupů Yoga fyzio",
+      "name": "10 vstupů Fyzio Yoga",
       "price": "230 Kč",
       "per": "za vstup",
       "valid": "",

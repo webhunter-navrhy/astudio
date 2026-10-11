@@ -1,112 +1,122 @@
 {
-  "note": "Ukázkový rozvrh – aktuální lekce a volná místa uvidíte v rezervačním systému.",
-  "days": [
+ "note": "Aktuální volná místa uvidíte v rezervačním systému.",
+ "days": [
+  {
+   "day": "Pondělí",
+   "short": "Po",
+   "classes": [
     {
-      "day": "Pondělí",
-      "short": "Po",
-      "classes": [
-        {
-          "time": "18:00",
-          "lesson": "Pilates",
-          "len": "55 min"
-        },
-        {
-          "time": "19:10",
-          "lesson": "Barre",
-          "len": "55 min"
-        }
-      ]
+     "time": "08:30",
+     "lesson": "Zdravá záda",
+     "len": "55 min"
     },
     {
-      "day": "Úterý",
-      "short": "Út",
-      "classes": [
-        {
-          "time": "08:30",
-          "lesson": "Barre",
-          "len": "55 min"
-        },
-        {
-          "time": "18:00",
-          "lesson": "Pilates Sculpt",
-          "len": "55 min"
-        }
-      ]
+     "time": "18:00",
+     "lesson": "Pilates",
+     "len": "55 min"
     },
     {
-      "day": "Středa",
-      "short": "St",
-      "classes": [
-        {
-          "time": "17:00",
-          "lesson": "Barre",
-          "len": "55 min"
-        },
-        {
-          "time": "18:00",
-          "lesson": "Barre",
-          "len": "55 min"
-        },
-        {
-          "time": "19:00",
-          "lesson": "Barre Strength",
-          "len": "55 min"
-        }
-      ]
-    },
-    {
-      "day": "Čtvrtek",
-      "short": "Čt",
-      "classes": [
-        {
-          "time": "09:00",
-          "lesson": "Pilates",
-          "len": "55 min"
-        },
-        {
-          "time": "18:30",
-          "lesson": "Pilates",
-          "len": "55 min"
-        }
-      ]
-    },
-    {
-      "day": "Pátek",
-      "short": "Pá",
-      "classes": [
-        {
-          "time": "18:00",
-          "lesson": "Barre",
-          "len": "55 min"
-        },
-        {
-          "time": "19:00",
-          "lesson": "Barre",
-          "len": "55 min"
-        }
-      ]
-    },
-    {
-      "day": "Sobota",
-      "short": "So",
-      "classes": [
-        {
-          "time": "09:00",
-          "lesson": "Barre Strength",
-          "len": "55 min"
-        }
-      ]
-    },
-    {
-      "day": "Neděle",
-      "short": "Ne",
-      "classes": [
-        {
-          "time": "19:00",
-          "lesson": "Pilates",
-          "len": "55 min"
-        }
-      ]
+     "time": "19:00",
+     "lesson": "Pilates",
+     "len": "55 min"
     }
-  ]
+   ]
+  },
+  {
+   "day": "Úterý",
+   "short": "Út",
+   "classes": [
+    {
+     "time": "08:30",
+     "lesson": "Barre",
+     "len": "55 min"
+    },
+    {
+     "time": "19:00",
+     "lesson": "Flow Yoga",
+     "len": "55 min"
+    }
+   ]
+  },
+  {
+   "day": "Středa",
+   "short": "St",
+   "classes": [
+    {
+     "time": "10:00",
+     "lesson": "Mama Yoga",
+     "len": "55 min"
+    },
+    {
+     "time": "17:00",
+     "lesson": "Barre",
+     "len": "55 min"
+    },
+    {
+     "time": "18:00",
+     "lesson": "Barre",
+     "len": "55 min"
+    },
+    {
+     "time": "19:00",
+     "lesson": "Barre",
+     "len": "55 min"
+    }
+   ]
+  },
+  {
+   "day": "Čtvrtek",
+   "short": "Čt",
+   "classes": [
+    {
+     "time": "08:30",
+     "lesson": "Pilates Sculpt",
+     "len": "55 min"
+    },
+    {
+     "time": "18:00",
+     "lesson": "Fyzio Yoga",
+     "len": "55 min"
+    }
+   ]
+  },
+  {
+   "day": "Pátek",
+   "short": "Pá",
+   "classes": [
+    {
+     "time": "18:00",
+     "lesson": "Barre Strength",
+     "len": "55 min"
+    },
+    {
+     "time": "19:00",
+     "lesson": "Barre Strength",
+     "len": "55 min"
+    }
+   ]
+  },
+  {
+   "day": "Sobota",
+   "short": "So",
+   "classes": [
+    {
+     "time": "08:30",
+     "lesson": "Pilates Sculpt",
+     "len": "55 min"
+    }
+   ]
+  },
+  {
+   "day": "Neděle",
+   "short": "Ne",
+   "classes": [
+    {
+     "time": "08:30",
+     "lesson": "Pilates Sculpt",
+     "len": "55 min"
+    }
+   ]
+  }
+ ]
 }

@@ -57,6 +57,7 @@ p { text-wrap: pretty; }
   font-size: 0.7rem; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--ink); margin-bottom: 1.2rem;
 }
+.kicker .kk { text-align: center; }
 .kicker::before { content: ''; width: 2rem; height: 1px; background: currentColor; }
 .note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
 .note a, .book-help a { border-bottom: 1px solid var(--yellow-2); }
@@ -303,7 +304,8 @@ p { text-wrap: pretty; }
 .booking iframe { width: 100%; min-height: 720px; border: 0; display: block; }
 .booking-ph { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3rem 1.5rem; border: 1px dashed var(--sand); }
 .booking-ph p:not(.kicker) { color: var(--muted); max-width: 34em; margin-bottom: 1.6rem; }
-.booking-ph .kicker::before { display: none; }
+.booking-ph .kicker .kk { text-align: center; }
+.kicker::before { display: none; }
 .booking-mark { width: 3rem; height: 3rem; margin-bottom: 1.2rem; color: var(--taupe); }
 .book-help { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem; margin-top: 1.6rem; color: var(--muted); }
 
