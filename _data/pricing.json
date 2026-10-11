@@ -12,6 +12,26 @@
       "note": "Jednorázový vstup"
     },
     {
+      "name": "Yoga",
+      "price": "220 Kč",
+      "note": "Jednorázový vstup"
+    },
+    {
+      "name": "Yoga fyzio",
+      "price": "260 Kč",
+      "note": "Jednorázový vstup"
+    },
+    {
+      "name": "Mama Yoga",
+      "price": "220 Kč",
+      "note": "Jednorázový vstup"
+    },
+    {
+      "name": "Zdravá záda",
+      "price": "220 Kč",
+      "note": "Jednorázový vstup"
+    },
+    {
       "name": "Individuální lekce",
       "price": "600 Kč",
       "note": "Jen vy a lektorka"
@@ -20,13 +40,41 @@
   "passes": [
     {
       "name": "10 vstupů Barre",
-      "price": "240 Kč",
+      "price": "230 Kč",
       "per": "za vstup",
       "valid": "",
       "featured": true
     },
     {
       "name": "10 vstupů Pilates",
+      "price": "200 Kč",
+      "per": "za vstup",
+      "valid": "",
+      "featured": false
+    },
+    {
+      "name": "10 vstupů Yoga",
+      "price": "200 Kč",
+      "per": "za vstup",
+      "valid": "",
+      "featured": false
+    },
+    {
+      "name": "10 vstupů Yoga fyzio",
+      "price": "230 Kč",
+      "per": "za vstup",
+      "valid": "",
+      "featured": false
+    },
+    {
+      "name": "10 vstupů Mama Yoga",
+      "price": "200 Kč",
+      "per": "za vstup",
+      "valid": "",
+      "featured": false
+    },
+    {
+      "name": "10 vstupů Zdravá záda",
       "price": "200 Kč",
       "per": "za vstup",
       "valid": "",

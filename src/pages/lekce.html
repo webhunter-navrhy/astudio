@@ -1,4 +1,4 @@
-{# {"out": "lekce/index.html", "id": "lekce", "title": "Lekce Barre a Pilates – A-Studio Odolena Voda", "desc": "Barre, Barre Strength, Pilates Rehab, Pilates Sculpt, jóga a soukromé lekce."} #}
+{# {"out": "lekce/index.html", "id": "lekce", "title": "Lekce Barre a Pilates – A-Studio Odolena Voda", "desc": "Barre, Barre Strength, Pilates, Pilates Sculpt, jóga, Zdravá záda a soukromé lekce."} #}
 {% extends "base.html" %}
 {% from "macros.html" import page_hero, level, cta_band with context %}
 {% block content %}
@@ -11,6 +11,7 @@
       <button class="chip" data-filter="Barre">Barre</button>
       <button class="chip" data-filter="Pilates">Pilates</button>
       <button class="chip" data-filter="Jóga">Jóga</button>
+      <button class="chip" data-filter="Zdraví">Zdravá záda</button>
       <button class="chip" data-filter="Soukromě">Soukromě</button>
     </div>
     <div class="legend"><span>Náročnost</span>{{ level(1) }} lehká {{ level(2) }} střední {{ level(3) }} vyšší</div>
@@ -41,5 +42,5 @@
   </div>
 </section>
 
-{{ cta_band('Nevíte, <em>kde začít?</em>', 'Pro první návštěvu doporučujeme Barre nebo Pilates Rehab. A když si nejste jistá, napište nám.', 'Rozvrh a rezervace') }}
+{{ cta_band('Nevíte, <em>kde začít?</em>', 'Pro první návštěvu doporučujeme Barre nebo Pilates. A když si nejste jistá, napište nám.', 'Rozvrh a rezervace') }}
 {% endblock %}

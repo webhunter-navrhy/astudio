@@ -21,9 +21,9 @@
    "image": "barre-nohy.jpg"
   },
   {
-   "id": "pilates-rehab",
+   "id": "pilates",
    "group": "Pilates",
-   "name": "Pilates Rehab",
+   "name": "Pilates",
    "length": "55 min",
    "level": 1,
    "for": "Vhodná i pro začátečnice",
@@ -44,7 +44,7 @@
    "id": "flow-yoga",
    "group": "Jóga",
    "name": "Flow Yoga",
-   "length": "",
+   "length": "55 min",
    "level": 0,
    "for": "Plynulá a dynamická lekce jógy",
    "text": "Plynulá a dynamická lekce jógy, která propojuje pohyb s dechem do přirozeně navazujících sekvencí.\nFlow Yoga vychází ze stylu Vinyasa jógy a kombinuje posílení celého těla, protažení, rovnováhu a vědomý pohyb.\nBěhem lekce postupně rozvíjíme sílu, flexibilitu i stabilitu, uvolňujeme napětí a učíme se vnímat vlastní tělo. Každý pohyb má svůj rytmus, každý nádech a výdech své místo.\nLekce je vhodná pro všechny, kteří chtějí propojit aktivní pohyb s uvolněním mysli. Intenzitu je možné přizpůsobit individuálním možnostem.\nPřijďte zpomalit myšlenky, rozhýbat tělo a najít svůj FLOW.",
@@ -54,7 +54,7 @@
    "id": "mama-yoga",
    "group": "Jóga",
    "name": "Mama Yoga",
-   "length": "",
+   "length": "55 min",
    "level": 0,
    "for": "S MUDr. Danielou Lilling",
    "text": "Lekci vede atestovaná rehabilitační lékařka a lektorka jógy v jedné osobě, MUDr. Daniela Lilling, která se specializuje na problematiku pánevního dna a ženského zdraví. Spojuje jemnost a plynulost jógy s poznatky moderní pohybové medicíny a fyzioterapie.\nZaměřujeme se na bezpečné a vědomé posílení i uvolnění pánevního dna, aktivaci hlubokého stabilizačního systému a úlevu od bolestí. Cílem je podpořit tělo v těhotenství, regeneraci po porodu nebo navrátit sílu a rovnováhu středu těla v jakékoliv fázi ženského života.\nLekce je ideální volbou pro těhotné ženy od 12. týdne těhotenství, maminky po porodu i všechny ženy, které chtějí svému tělu dopřát odbornou péči, získat jistotu v pohybu a cítit se ve svém těle skvěle.",
@@ -64,11 +64,31 @@
    "id": "fyzio-joga",
    "group": "Jóga",
    "name": "Fyzio jóga",
-   "length": "",
+   "length": "55 min",
    "level": 0,
    "for": "S MUDr. Danielou Lilling",
    "text": "Lekci vede atestovaná rehabilitační lékařka a lektorka jógy v jedné osobě, MUDr. Daniela Lilling. Spojuje plynulost a požitek z jógy s principy moderní pohybové medicíny.\nZaměřujeme se na to, jak tělo reálně funguje: aktivujeme hluboký stabilizační systém, upravujeme dechové návyky a odbouráváme chronické napětí v přetížených partiích. Cílem je vybudovat tělo, které je nejen flexibilní, ale především silné, stabilní a bez bolesti.\nLekce je ideální volbou pro každého, kdo chce svému tělu dopřát tu nejlepší péči a posunout své cvičení na novou úroveň.",
    "image": "protazeni-okno.jpg"
+  },
+  {
+   "id": "zdrava-zada",
+   "group": "Pilates",
+   "name": "Zdravá záda",
+   "length": "55 min",
+   "level": 1,
+   "for": "Prevence a úleva od bolesti zad",
+   "text": "Cvičení soustředící se na prevenci (nejen) bolesti zad, snížení již vzniklých bolestí v oblasti páteře, ale i v dalších etážích těla v důsledku např. sedavého zaměstnání, špatných pohybových i dechových stereotypů atp. V lekci se zaměřujeme na odstraňování svalové dysbalance, tedy na protažení svalů s tendencí ke zkracování a posílení svalů, které mají naopak tendenci ochabovat. Věnujeme se také aktivaci hlubokého stabilizačního systému, zlepšení stability bederní páteře a dosažení flexibilního a silného těla zároveň. Důležitou součástí cvičení je rovněž práce na mobilitě. Využíváme prvky zdravotní TV, funkčního tréninku, jógy, pilates, core training, rehabilitační cviky aj.\nCvičení probíhá ve všech pozicích (vleže, vkleče, vsedě, i ve stoji) s využitím váhy vlastního těla, ale i pomůcek, jako jsou overbally, gymbally, malé míčky, gumičky, therabandy, jóga bloky i lehké činky.\nCvičení je velice vědomé, zaměřené na správnou techniku jednotlivých cviků a dechu. Každá lekce je jiná, ale vždy komplexní, jelikož bolest zad je mnohdy způsobena problémem v jiných etážích těla.\nBěhem hodiny se zahřejeme, zpevníme, protáhneme i uvolníme klouby.\nCvičíme naboso 🙂",
+   "image": "protazeni-okno.jpg"
+  },
+  {
+   "id": "zdrava-zada",
+   "group": "Zdraví",
+   "name": "Zdravá záda",
+   "length": "55 min",
+   "level": 0,
+   "for": "Prevence a úleva od bolesti zad",
+   "text": "Cvičení soustředící se na prevenci (nejen) bolesti zad, snížení již vzniklých bolestí v oblasti páteře, ale i v dalších etážích těla v důsledku např. sedavého zaměstnání, špatných pohybových i dechových stereotypů atp.\nV lekci se zaměřujeme na odstraňování svalové dysbalance, tedy na protažení svalů s tendencí ke zkracování a posílení svalů, které mají naopak tendenci ochabovat. Věnujeme se také aktivaci hlubokého stabilizačního systému, zlepšení stability bederní páteře a dosažení flexibilního a silného těla zároveň. Důležitou součástí cvičení je rovněž práce na mobilitě. Využíváme prvky zdravotní TV, funkčního tréninku, jógy, pilates, core training, rehabilitační cviky aj.\nCvičení probíhá ve všech pozicích (vleže, vkleče, vsedě, i ve stoji) s využitím váhy vlastního těla, ale i pomůcek, jako jsou overbally, gymbally, malé míčky, gumičky, therabandy, jóga bloky i lehké činky.\nCvičení je velice vědomé, zaměřené na správnou techniku jednotlivých cviků a dechu. Každá lekce je jiná, ale vždy komplexní, jelikož bolest zad je mnohdy způsobena problémem v jiných etážích těla.\nBěhem hodiny se zahřejeme, zpevníme, protáhneme i uvolníme klouby. Cvičíme naboso 🙂",
+   "image": "pilates-mat.jpg"
   },
   {
    "id": "privat",
