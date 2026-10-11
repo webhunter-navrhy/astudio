@@ -58,6 +58,8 @@ p { text-wrap: pretty; }
   color: var(--ink); margin-bottom: 1.2rem;
 }
 .kicker .kk { text-align: center; }
+.hero-copy .kicker .kk { white-space: nowrap; font-size: clamp(0.56rem, 2.6vw, 0.7rem); letter-spacing: clamp(0.14em, 0.9vw + 0.05em, 0.32em); }
+.hero-copy .kicker::before { display: none; }
 .kicker::before { content: ''; width: 2rem; height: 1px; background: currentColor; }
 .note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
 .note a, .book-help a { border-bottom: 1px solid var(--yellow-2); }
