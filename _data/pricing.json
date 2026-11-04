@@ -3,22 +3,22 @@
   "single": [
     {
       "name": "Barre",
-      "price": "260 Kč",
+      "price": "290 Kč",
       "note": "Jednorázový vstup"
     },
     {
       "name": "Pilates",
-      "price": "220 Kč",
+      "price": "250 Kč",
       "note": "Jednorázový vstup"
     },
     {
       "name": "Yoga",
-      "price": "220 Kč",
+      "price": "250 Kč",
       "note": "Jednorázový vstup"
     },
     {
       "name": "Fyzio Yoga",
-      "price": "260 Kč",
+      "price": "290 Kč",
       "note": "Jednorázový vstup"
     },
     {
@@ -28,7 +28,7 @@
     },
     {
       "name": "Zdravá záda",
-      "price": "220 Kč",
+      "price": "290 Kč",
       "note": "Jednorázový vstup"
     },
     {
@@ -54,5 +54,5 @@
     }
   ],
   "multisport": "Jednáme se společností MultiSport – již brzy.",
-  "gift": "Dárkový poukaz na libovolnou částku nebo permanentku – hezký dárek pro kamarádku, mámu i sebe."
+  "gift": ""
 }
