@@ -40,6 +40,11 @@
       "name": "Barre Strength",
       "price": "290",
       "note": ""
+    },
+    {
+      "name": "Pilates Sculpt",
+      "price": "250",
+      "note": ""
     }
   ],
   "passes": [
