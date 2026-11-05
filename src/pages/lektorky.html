@@ -18,11 +18,12 @@
         <figure class="arch"><img src="{{ root }}{{ m.image|img }}" alt="" loading="lazy"></figure>
         <p class="member-role">{{ m.role }}</p>
         <h2>{{ m.name }}</h2>
-        <p>{{ m.text }}</p>
+        {% set parts = (m.text or '').split('\n\n') %}
+        {% if parts[0] %}<p>{{ parts[0] }}</p>{% endif %}
+        {% if parts|length > 1 %}<details class="more"><summary class="link">Celý příběh <svg><use href="#i-arr"/></svg></summary>{% for q in parts[1:] %}{% if q.startswith('* ') %}<ul class="quals">{% for l in q.split('\n') %}<li>{{ l.lstrip('* ') }}</li>{% endfor %}</ul>{% else %}<p>{{ q }}</p>{% endif %}{% endfor %}</details>{% endif %}
       </article>
       {% endfor %}
     </div>
-    <p class="note reveal">Fotografie jsou ilustrační – po otevření studia je nahradíme profesionálními portréty lektorek.</p>
   </div>
 </section>
 {{ cta_band('Chcete učit<br><em>v A-Studiu?</em>', 'Hledáme lektorky barre a pilates, které sdílí naše hodnoty. Napište nám.', 'Kontaktujte nás', 'kontakt/') }}

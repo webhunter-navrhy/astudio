@@ -533,3 +533,8 @@ p { text-wrap: pretty; }
 .link-btn:hover { opacity: 0.7; }
 @media (max-width: 640px) { .cookies { left: 0.6rem; right: 0.6rem; bottom: 0.6rem; padding: 1.1rem; } .cookies-btns .btn { flex: 1 1 auto; } }
 .booking-note { margin: 0 0 1.4rem; padding: 1rem 1.3rem; background: var(--yellow-2, #F7D77F); border-radius: 4px; color: #1a1a1a; }
+
+.more summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: .4rem; margin-bottom: 1rem; }
+.more summary::-webkit-details-marker { display: none; }
+.more[open] summary svg { transform: rotate(90deg); }
+.more .quals { margin-bottom: 1rem; }
