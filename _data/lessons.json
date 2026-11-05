@@ -89,6 +89,16 @@
       "for": "Jen vy a lektorka",
       "text": "Individuální lekce barre nebo pilates podle Vašeho cíle – návrat po porodu, bolavá záda nebo příprava na skupinové lekce. I pro dvojici.",
       "image": "img/uploads/2026-11/soukroma-lekce-upjhzk.jpg"
+    },
+    {
+      "id": "pilates-sculpt-90-minut",
+      "group": "Barre",
+      "name": "Pilates Sculpt 90 minut",
+      "length": "55 min",
+      "level": 2,
+      "for": "",
+      "text": "Pilates, ve kterém si dáme trochu víc do těla v 90 minutách. Vychází z principů klasického Pilates, ale přidáváme větší intenzitu, svižnější tempo a náročnější varianty cviků.\nČeká Vás práce s vlastní vahou i pomůckami, důraz na střed těla, sílu, stabilitu a kontrolu pohybu. Pořád dbáme na správnou techniku – jen Vás necháme o kousek déle vydržet, o kousek víc zabrat.\nPilates pro dny, kdy chcete cítit, že jste opravdu cvičily.",
+      "image": "barre-lekce.jpg"
     }
   ]
 }
