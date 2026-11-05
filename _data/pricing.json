@@ -35,6 +35,11 @@
       "name": "Individuální lekce",
       "price": "600 Kč",
       "note": "Jen vy a lektorka"
+    },
+    {
+      "name": "Barre Strength",
+      "price": "290",
+      "note": ""
     }
   ],
   "passes": [
