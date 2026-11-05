@@ -45,6 +45,11 @@
       "name": "Pilates Sculpt",
       "price": "250",
       "note": ""
+    },
+    {
+      "name": "Pilates Sculpt 90 minut",
+      "price": "350",
+      "note": ""
     }
   ],
   "passes": [
