@@ -538,5 +538,3 @@ p { text-wrap: pretty; }
 .more summary::-webkit-details-marker { display: none; }
 .more[open] summary svg { transform: rotate(90deg); }
 .more .quals { margin-bottom: 1rem; }
-.team-photo { margin: 0 0 3rem; border-radius: var(--arch, 24px); overflow: hidden; }
-.team-photo img { width: 100%; height: auto; display: block; }
