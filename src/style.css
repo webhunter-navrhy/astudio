@@ -538,3 +538,6 @@ p { text-wrap: pretty; }
 .more summary::-webkit-details-marker { display: none; }
 .more[open] summary svg { transform: rotate(90deg); }
 .more .quals { margin-bottom: 1rem; }
+
+.footer-pay { margin-top: 2rem; }
+.footer-pay img { display: block; width: 100%; max-width: 20rem; height: auto; opacity: 0.9; }
